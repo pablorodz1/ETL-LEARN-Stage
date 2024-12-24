@@ -1,0 +1,1937 @@
+<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="11/11/2024 6:28:58 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="ASUS-TUF-GAMING"
+  DTS:CreatorName="ASUS-TUF-GAMING\Pablo Rodriguez"
+  DTS:DTSID="{D8B21DC4-7C4C-4E67-AECC-9A9EEE6599B2}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="16.0.5556.0"
+  DTS:LocaleID="2058"
+  DTS:ObjectName="ventas"
+  DTS:PackageType="5"
+  DTS:VersionBuild="30"
+  DTS:VersionGUID="{A5DDFDF2-BC76-4FB1-ACF9-ED3A0123DF5F}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[.,1450.NorthwindLogs.sa]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{4311920D-8828-40F3-9F16-101A10AEBA7E}"
+      DTS:ObjectName=".,1450.NorthwindLogs.sa">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=.,1450;User ID=sa;Initial Catalog=NorthwindLogs;Provider=MSOLEDBSQL.1;Persist Security Info=True;Initial File Name=;Server SPN=;Authentication=;Access Token=;Application Name=SSIS-ventas-{4311920D-8828-40F3-9F16-101A10AEBA7E}.,1450.NorthwindLogs.sa;Auto Translate=False;">
+          <DTS:Password
+            DTS:Name="Password"
+            Sensitive="1"
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAXAD7/w7AQkOcsbYvEc8Q+AAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAABfscqC1UdY6FMYZFhsyXFKfSH9s+GdIide1BQvzug+2AAAAAAOgAAAAAIAACAAAABcIiDE6Pb1r2FhkIJndqlD0UA+tN4DifBDwpkVhfxriSAAAACyElI4RjRB+4sgwvtUPV/BYcVY/fj3Y7ZXJU20D/9kLUAAAAAX1DQHFRYq99V/u7D9MAP41vwKnHbdKmPQ5stQfwKHW1LZ+b629ibq0zcxmJKZ1k0FOiCL8DsY2XetmBs/9TKD</DTS:Password>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[.,1450.NORTHWND.sa]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{F680FB40-FA6A-4ADE-9223-A474EF935642}"
+      DTS:ObjectName=".,1450.NORTHWND.sa">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=.,1450;User ID=sa;Initial Catalog=NORTHWND;Provider=MSOLEDBSQL.1;Persist Security Info=True;Initial File Name=;Server SPN=;Authentication=;Access Token=;Application Name=SSIS-ventas-{F680FB40-FA6A-4ADE-9223-A474EF935642}.,1450.NORTHWND.sa;Auto Translate=False;">
+          <DTS:Password
+            DTS:Name="Password"
+            Sensitive="1"
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAXAD7/w7AQkOcsbYvEc8Q+AAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAAf9ztjdyVaU9+zOYwNaeuVLmMcfUnTi2VAulP6Q2TX8wAAAAAOgAAAAAIAACAAAAA1YGSeXcZA0t+D4paImDN6i2UctD3QdDFCKU/16tMVgiAAAAC32I0XAH2MiszJ8eRrhQmbzEUCtoJMeCItFD44GKN/TEAAAACIRQ+X0JOdwqgPoSWjQaCW56cXAX76JduIAiULThDdoFhj1IhRXHHCn+ULJtPAZe+7dWk3xhmMXzU0koB3iBEz</DTS:Password>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[.,1450.stageNorthwind.sa]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{8652EAF8-0BE5-4220-B46C-036431C6087C}"
+      DTS:ObjectName=".,1450.stageNorthwind.sa">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=.,1450;User ID=sa;Initial Catalog=stageNorthwind;Provider=MSOLEDBSQL.1;Persist Security Info=True;Initial File Name=;Server SPN=;Authentication=;Access Token=;Application Name=SSIS-ventas-{8652EAF8-0BE5-4220-B46C-036431C6087C}.,1450.stageNorthwind.sa;Auto Translate=False;">
+          <DTS:Password
+            DTS:Name="Password"
+            Sensitive="1"
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAXAD7/w7AQkOcsbYvEc8Q+AAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAADZGqi5NYvRXMtYvx+C1zDm2vt9PDUAGmuSTh8YhNsP7gAAAAAOgAAAAAIAACAAAADeoemRDkbcnpsTb3s5a2QKqUNjmdZnpF8UWL008uutOiAAAADlcK/flu18FBABj4cqlCrFbKmN6blDYT4qCz7q4+rS9EAAAABTujPr3gsYHZAc/SrKX/jJHcaEYH6BhM7ljlXr4KnSxRjX7dt2P0QkJ97l8vNA1OO16UarYuYYiIlxLKDIBtY4</DTS:Password>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{FADE553E-2426-41AF-AFBE-E9CDD9F3E9FF}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="Agregar">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{273F2998-DB69-4763-85C2-F7A6FD9A80B3}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="Modificar">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+  </DTS:Variables>
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Logs Ventas"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Tarea Ejecutar SQL"
+      DTS:DTSID="{32EDE43C-7D32-4C12-A79A-05AD513B2F86}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Logs Ventas"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{4311920D-8828-40F3-9F16-101A10AEBA7E}"
+          SQLTask:SqlStatementSource="insert Northwing_Logs_Stage(&#xA;Table_name,&#xA;Etl_load,&#xA;Num_Rows_Inserted,&#xA;Num_Rows_Modified&#xA;)&#xA;VALUES (&#xA;    'StageVentas', &#xA;    cast (GETDATE() as date), &#xA;    ?, &#xA;    ?&#xA;);" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="0"
+            SQLTask:DtsVariableName="User::Agregar"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="3"
+            SQLTask:ParameterSize="-1" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="1"
+            SQLTask:DtsVariableName="User::Modificar"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="3"
+            SQLTask:ParameterSize="-1" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Ventas"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Tarea Flujo de datos"
+      DTS:DTSID="{B2439937-502E-413B-A641-725B095FD92D}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Ventas"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Ventas\Comando de OLE DB"
+              componentClassID="Microsoft.OLEDBCommand"
+              contactInfo="Comando de OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;2"
+              description="Ejecuta una instrucción SQL para cada fila de un flujo de datos. Por ejemplo, se usa para llamar al procedimiento almacenado de configuración de nuevo empleado para cada fila de la tabla de nuevos empleados. Nota: la ejecución de una instrucción SQL para cada fila de un flujo de datos de gran tamaño puede tardar mucho tiempo."
+              name="Comando de OLE DB"
+              usesDispositions="true"
+              version="2">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Número de segundos antes de que se agote el tiempo de espera de un comando. Un valor de 0 indica un tiempo de espera infinito."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Comando SQL para ejecutar."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">UPDATE [dbo].[StageVentas] SET [Empleado_Codigo] = ?,[Producto_Codigo] = ?,[Proveedor_Codigo] = ?,[Ventas_Descuento] = ?,[Ventas_Monto] = ?,[Ventas_NOrden] = ?,[Ventas_OrderDate] = ?,[Ventas_PUnitario] = ?,[Ventas_Unidades] = ? WHERE [Cliente_Codigo] = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica la página de códigos de columna para utilizar cuando la información de página de códigos no está disponible en el origen de datos."
+                  name="DefaultCodePage">1252</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Ventas\Comando de OLE DB.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[.,1450.stageNorthwind.sa]"
+                  connectionManagerRefId="Package.ConnectionManagers[.,1450.stageNorthwind.sa]"
+                  description="La conexión de tiempo de ejecución OLE DB usada para obtener acceso a la base de datos."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Ventas\Comando de OLE DB.Inputs[Entrada de comando de OLE DB]"
+                  errorOrTruncationOperation="Ejecución de comando"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="Entrada de comando de OLE DB">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Ventas\Comando de OLE DB.Inputs[Entrada de comando de OLE DB].Columns[Copy of CustomerID]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="5"
+                      cachedName="Copy of CustomerID"
+                      externalMetadataColumnId="Package\Ventas\Comando de OLE DB.Inputs[Entrada de comando de OLE DB].ExternalColumns[Param_9]"
+                      lineageId="Package\Ventas\Conversión de datos.Outputs[Salida de conversión de datos].Columns[Copy of CustomerID]" />
+                    <inputColumn
+                      refId="Package\Ventas\Comando de OLE DB.Inputs[Entrada de comando de OLE DB].Columns[EmployeeID]"
+                      cachedDataType="i4"
+                      cachedName="EmployeeID"
+                      externalMetadataColumnId="Package\Ventas\Comando de OLE DB.Inputs[Entrada de comando de OLE DB].ExternalColumns[Param_0]"
+                      lineageId="Package\Ventas\Origen de NORTHWNDINNERJOIN.Outputs[Salida de origen de OLE DB].Columns[EmployeeID]" />
+                    <inputColumn
+                      refId="Package\Ventas\Comando de OLE DB.Inputs[Entrada de comando de OLE DB].Columns[Copy of ProductID]"
+                      cachedDataType="i4"
+                      cachedName="Copy of ProductID"
+                      externalMetadataColumnId="Package\Ventas\Comando de OLE DB.Inputs[Entrada de comando de OLE DB].ExternalColumns[Param_1]"
+                      lineageId="Package\Ventas\Conversión de datos.Outputs[Salida de conversión de datos].Columns[Copy of ProductID]" />
+                    <inputColumn
+                      refId="Package\Ventas\Comando de OLE DB.Inputs[Entrada de comando de OLE DB].Columns[Copy of SupplierID]"
+                      cachedDataType="i4"
+                      cachedName="Copy of SupplierID"
+                      externalMetadataColumnId="Package\Ventas\Comando de OLE DB.Inputs[Entrada de comando de OLE DB].ExternalColumns[Param_2]"
+                      lineageId="Package\Ventas\Conversión de datos.Outputs[Salida de conversión de datos].Columns[Copy of SupplierID]" />
+                    <inputColumn
+                      refId="Package\Ventas\Comando de OLE DB.Inputs[Entrada de comando de OLE DB].Columns[Copy of Discount]"
+                      cachedDataType="numeric"
+                      cachedName="Copy of Discount"
+                      cachedPrecision="18"
+                      externalMetadataColumnId="Package\Ventas\Comando de OLE DB.Inputs[Entrada de comando de OLE DB].ExternalColumns[Param_3]"
+                      lineageId="Package\Ventas\Conversión de datos.Outputs[Salida de conversión de datos].Columns[Copy of Discount]" />
+                    <inputColumn
+                      refId="Package\Ventas\Comando de OLE DB.Inputs[Entrada de comando de OLE DB].Columns[Copy of Monto]"
+                      cachedDataType="numeric"
+                      cachedName="Copy of Monto"
+                      cachedPrecision="18"
+                      externalMetadataColumnId="Package\Ventas\Comando de OLE DB.Inputs[Entrada de comando de OLE DB].ExternalColumns[Param_4]"
+                      lineageId="Package\Ventas\Conversión de datos.Outputs[Salida de conversión de datos].Columns[Copy of Monto]" />
+                    <inputColumn
+                      refId="Package\Ventas\Comando de OLE DB.Inputs[Entrada de comando de OLE DB].Columns[OrderID]"
+                      cachedDataType="i4"
+                      cachedName="OrderID"
+                      externalMetadataColumnId="Package\Ventas\Comando de OLE DB.Inputs[Entrada de comando de OLE DB].ExternalColumns[Param_5]"
+                      lineageId="Package\Ventas\Origen de NORTHWNDINNERJOIN.Outputs[Salida de origen de OLE DB].Columns[OrderID]" />
+                    <inputColumn
+                      refId="Package\Ventas\Comando de OLE DB.Inputs[Entrada de comando de OLE DB].Columns[OrderDate]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="OrderDate"
+                      externalMetadataColumnId="Package\Ventas\Comando de OLE DB.Inputs[Entrada de comando de OLE DB].ExternalColumns[Param_6]"
+                      lineageId="Package\Ventas\Origen de NORTHWNDINNERJOIN.Outputs[Salida de origen de OLE DB].Columns[OrderDate]" />
+                    <inputColumn
+                      refId="Package\Ventas\Comando de OLE DB.Inputs[Entrada de comando de OLE DB].Columns[Copy of UnitPrice]"
+                      cachedDataType="numeric"
+                      cachedName="Copy of UnitPrice"
+                      cachedPrecision="18"
+                      externalMetadataColumnId="Package\Ventas\Comando de OLE DB.Inputs[Entrada de comando de OLE DB].ExternalColumns[Param_7]"
+                      lineageId="Package\Ventas\Conversión de datos.Outputs[Salida de conversión de datos].Columns[Copy of UnitPrice]" />
+                    <inputColumn
+                      refId="Package\Ventas\Comando de OLE DB.Inputs[Entrada de comando de OLE DB].Columns[Copy of UnitsInStock]"
+                      cachedDataType="i4"
+                      cachedName="Copy of UnitsInStock"
+                      externalMetadataColumnId="Package\Ventas\Comando de OLE DB.Inputs[Entrada de comando de OLE DB].ExternalColumns[Param_8]"
+                      lineageId="Package\Ventas\Conversión de datos.Outputs[Salida de conversión de datos].Columns[Copy of UnitsInStock]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Ventas\Comando de OLE DB.Inputs[Entrada de comando de OLE DB].ExternalColumns[Param_0]"
+                      dataType="i4"
+                      name="Param_0">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Información de parámetros. Coincide con los valores de DBPARAMFLAGSENUM de OLE DB."
+                          name="DBParamInfoFlags">81</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Ventas\Comando de OLE DB.Inputs[Entrada de comando de OLE DB].ExternalColumns[Param_1]"
+                      dataType="i4"
+                      name="Param_1">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Información de parámetros. Coincide con los valores de DBPARAMFLAGSENUM de OLE DB."
+                          name="DBParamInfoFlags">81</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Ventas\Comando de OLE DB.Inputs[Entrada de comando de OLE DB].ExternalColumns[Param_2]"
+                      dataType="i4"
+                      name="Param_2">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Información de parámetros. Coincide con los valores de DBPARAMFLAGSENUM de OLE DB."
+                          name="DBParamInfoFlags">81</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Ventas\Comando de OLE DB.Inputs[Entrada de comando de OLE DB].ExternalColumns[Param_3]"
+                      dataType="numeric"
+                      name="Param_3"
+                      precision="15"
+                      scale="2">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Información de parámetros. Coincide con los valores de DBPARAMFLAGSENUM de OLE DB."
+                          name="DBParamInfoFlags">81</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Ventas\Comando de OLE DB.Inputs[Entrada de comando de OLE DB].ExternalColumns[Param_4]"
+                      dataType="numeric"
+                      name="Param_4"
+                      precision="15"
+                      scale="2">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Información de parámetros. Coincide con los valores de DBPARAMFLAGSENUM de OLE DB."
+                          name="DBParamInfoFlags">81</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Ventas\Comando de OLE DB.Inputs[Entrada de comando de OLE DB].ExternalColumns[Param_5]"
+                      dataType="i4"
+                      name="Param_5">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Información de parámetros. Coincide con los valores de DBPARAMFLAGSENUM de OLE DB."
+                          name="DBParamInfoFlags">81</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Ventas\Comando de OLE DB.Inputs[Entrada de comando de OLE DB].ExternalColumns[Param_6]"
+                      dataType="dbTimeStamp"
+                      name="Param_6">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Información de parámetros. Coincide con los valores de DBPARAMFLAGSENUM de OLE DB."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Ventas\Comando de OLE DB.Inputs[Entrada de comando de OLE DB].ExternalColumns[Param_7]"
+                      dataType="numeric"
+                      name="Param_7"
+                      precision="15"
+                      scale="2">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Información de parámetros. Coincide con los valores de DBPARAMFLAGSENUM de OLE DB."
+                          name="DBParamInfoFlags">81</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Ventas\Comando de OLE DB.Inputs[Entrada de comando de OLE DB].ExternalColumns[Param_8]"
+                      dataType="i4"
+                      name="Param_8">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Información de parámetros. Coincide con los valores de DBPARAMFLAGSENUM de OLE DB."
+                          name="DBParamInfoFlags">81</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Ventas\Comando de OLE DB.Inputs[Entrada de comando de OLE DB].ExternalColumns[Param_9]"
+                      codePage="1252"
+                      dataType="str"
+                      length="5"
+                      name="Param_9">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Información de parámetros. Coincide con los valores de DBPARAMFLAGSENUM de OLE DB."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Ventas\Comando de OLE DB.Outputs[Salida de comando de OLE DB]"
+                  exclusionGroup="1"
+                  name="Salida de comando de OLE DB"
+                  synchronousInputId="Package\Ventas\Comando de OLE DB.Inputs[Entrada de comando de OLE DB]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Ventas\Comando de OLE DB.Outputs[Salida de error de comando de OLE DB]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Salida de error de comando de OLE DB"
+                  synchronousInputId="Package\Ventas\Comando de OLE DB.Inputs[Entrada de comando de OLE DB]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Ventas\Comando de OLE DB.Outputs[Salida de error de comando de OLE DB].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Ventas\Comando de OLE DB.Outputs[Salida de error de comando de OLE DB].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Ventas\Comando de OLE DB.Outputs[Salida de error de comando de OLE DB].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Ventas\Comando de OLE DB.Outputs[Salida de error de comando de OLE DB].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Ventas\Conversión de datos"
+              componentClassID="Microsoft.DataConvert"
+              contactInfo="Conversión de datos;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;0"
+              description="Conversión de datos"
+              name="Conversión de datos"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Ventas\Conversión de datos.Inputs[Entrada de conversión de datos]"
+                  name="Entrada de conversión de datos">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Ventas\Conversión de datos.Inputs[Entrada de conversión de datos].Columns[Monto]"
+                      cachedDataType="cy"
+                      cachedName="Monto"
+                      lineageId="Package\Ventas\Origen de NORTHWNDINNERJOIN.Outputs[Salida de origen de OLE DB].Columns[Monto]" />
+                    <inputColumn
+                      refId="Package\Ventas\Conversión de datos.Inputs[Entrada de conversión de datos].Columns[UnitPrice]"
+                      cachedDataType="cy"
+                      cachedName="UnitPrice"
+                      lineageId="Package\Ventas\Origen de NORTHWNDINNERJOIN.Outputs[Salida de origen de OLE DB].Columns[UnitPrice]" />
+                    <inputColumn
+                      refId="Package\Ventas\Conversión de datos.Inputs[Entrada de conversión de datos].Columns[UnitsInStock]"
+                      cachedDataType="i2"
+                      cachedName="UnitsInStock"
+                      lineageId="Package\Ventas\Origen de NORTHWNDINNERJOIN.Outputs[Salida de origen de OLE DB].Columns[UnitsInStock]" />
+                    <inputColumn
+                      refId="Package\Ventas\Conversión de datos.Inputs[Entrada de conversión de datos].Columns[Discount]"
+                      cachedDataType="r4"
+                      cachedName="Discount"
+                      lineageId="Package\Ventas\Origen de NORTHWNDINNERJOIN.Outputs[Salida de origen de OLE DB].Columns[Discount]" />
+                    <inputColumn
+                      refId="Package\Ventas\Conversión de datos.Inputs[Entrada de conversión de datos].Columns[CustomerID]"
+                      cachedDataType="wstr"
+                      cachedLength="5"
+                      cachedName="CustomerID"
+                      lineageId="Package\Ventas\Origen de NORTHWNDINNERJOIN.Outputs[Salida de origen de OLE DB].Columns[CustomerID]" />
+                    <inputColumn
+                      refId="Package\Ventas\Conversión de datos.Inputs[Entrada de conversión de datos].Columns[SupplierID]"
+                      cachedDataType="i4"
+                      cachedName="SupplierID"
+                      lineageId="Package\Ventas\Origen de NORTHWNDINNERJOIN.Outputs[Salida de origen de OLE DB].Columns[SupplierID]" />
+                    <inputColumn
+                      refId="Package\Ventas\Conversión de datos.Inputs[Entrada de conversión de datos].Columns[ProductID]"
+                      cachedDataType="i4"
+                      cachedName="ProductID"
+                      lineageId="Package\Ventas\Origen de NORTHWNDINNERJOIN.Outputs[Salida de origen de OLE DB].Columns[ProductID]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Ventas\Conversión de datos.Outputs[Salida de conversión de datos]"
+                  exclusionGroup="1"
+                  name="Salida de conversión de datos"
+                  synchronousInputId="Package\Ventas\Conversión de datos.Inputs[Entrada de conversión de datos]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Ventas\Conversión de datos.Outputs[Salida de conversión de datos].Columns[Copy of Discount]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Ventas\Conversión de datos.Outputs[Salida de conversión de datos].Columns[Copy of Discount]"
+                      name="Copy of Discount"
+                      precision="18"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Especifica la columna de entrada usada como origen de datos para la conversión."
+                          name="SourceInputColumnLineageID">#{Package\Ventas\Origen de NORTHWNDINNERJOIN.Outputs[Salida de origen de OLE DB].Columns[Discount]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica si la columna usa las rutinas de análisis más rápidas independientes de la configuración regional."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Ventas\Conversión de datos.Outputs[Salida de conversión de datos].Columns[Copy of Monto]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Ventas\Conversión de datos.Outputs[Salida de conversión de datos].Columns[Copy of Monto]"
+                      name="Copy of Monto"
+                      precision="18"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Especifica la columna de entrada usada como origen de datos para la conversión."
+                          name="SourceInputColumnLineageID">#{Package\Ventas\Origen de NORTHWNDINNERJOIN.Outputs[Salida de origen de OLE DB].Columns[Monto]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica si la columna usa las rutinas de análisis más rápidas independientes de la configuración regional."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Ventas\Conversión de datos.Outputs[Salida de conversión de datos].Columns[Copy of UnitPrice]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Ventas\Conversión de datos.Outputs[Salida de conversión de datos].Columns[Copy of UnitPrice]"
+                      name="Copy of UnitPrice"
+                      precision="18"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Especifica la columna de entrada usada como origen de datos para la conversión."
+                          name="SourceInputColumnLineageID">#{Package\Ventas\Origen de NORTHWNDINNERJOIN.Outputs[Salida de origen de OLE DB].Columns[UnitPrice]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica si la columna usa las rutinas de análisis más rápidas independientes de la configuración regional."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Ventas\Conversión de datos.Outputs[Salida de conversión de datos].Columns[Copy of UnitsInStock]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Ventas\Conversión de datos.Outputs[Salida de conversión de datos].Columns[Copy of UnitsInStock]"
+                      name="Copy of UnitsInStock"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Especifica la columna de entrada usada como origen de datos para la conversión."
+                          name="SourceInputColumnLineageID">#{Package\Ventas\Origen de NORTHWNDINNERJOIN.Outputs[Salida de origen de OLE DB].Columns[UnitsInStock]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica si la columna usa las rutinas de análisis más rápidas independientes de la configuración regional."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Ventas\Conversión de datos.Outputs[Salida de conversión de datos].Columns[Copy of CustomerID]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      length="5"
+                      lineageId="Package\Ventas\Conversión de datos.Outputs[Salida de conversión de datos].Columns[Copy of CustomerID]"
+                      name="Copy of CustomerID"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Especifica la columna de entrada usada como origen de datos para la conversión."
+                          name="SourceInputColumnLineageID">#{Package\Ventas\Origen de NORTHWNDINNERJOIN.Outputs[Salida de origen de OLE DB].Columns[CustomerID]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica si la columna usa las rutinas de análisis más rápidas independientes de la configuración regional."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Ventas\Conversión de datos.Outputs[Salida de conversión de datos].Columns[Copy of SupplierID]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Ventas\Conversión de datos.Outputs[Salida de conversión de datos].Columns[Copy of SupplierID]"
+                      name="Copy of SupplierID"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Especifica la columna de entrada usada como origen de datos para la conversión."
+                          name="SourceInputColumnLineageID">#{Package\Ventas\Origen de NORTHWNDINNERJOIN.Outputs[Salida de origen de OLE DB].Columns[SupplierID]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica si la columna usa las rutinas de análisis más rápidas independientes de la configuración regional."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Ventas\Conversión de datos.Outputs[Salida de conversión de datos].Columns[Copy of ProductID]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Ventas\Conversión de datos.Outputs[Salida de conversión de datos].Columns[Copy of ProductID]"
+                      name="Copy of ProductID"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Especifica la columna de entrada usada como origen de datos para la conversión."
+                          name="SourceInputColumnLineageID">#{Package\Ventas\Origen de NORTHWNDINNERJOIN.Outputs[Salida de origen de OLE DB].Columns[ProductID]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica si la columna usa las rutinas de análisis más rápidas independientes de la configuración regional."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Ventas\Conversión de datos.Outputs[Salida de error de conversión de datos]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Salida de error de conversión de datos"
+                  synchronousInputId="Package\Ventas\Conversión de datos.Inputs[Entrada de conversión de datos]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Ventas\Conversión de datos.Outputs[Salida de error de conversión de datos].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Ventas\Conversión de datos.Outputs[Salida de error de conversión de datos].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Ventas\Conversión de datos.Outputs[Salida de error de conversión de datos].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Ventas\Conversión de datos.Outputs[Salida de error de conversión de datos].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Ventas\Dimensión de variación lenta"
+              componentClassID="Microsoft.SCD"
+              contactInfo="Dimensión de variación lenta;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;3"
+              description="Actualiza una dimensión del almacenamiento de datos de SQL Server Analysis Services. Actualiza los registros de dimensión existentes e inserta los registros de dimensión que faltan. Por ejemplo, se actualiza la tabla DimProduct de la base de datos OLAP AdventureWorksDW con datos procedentes de la tabla Products de la base de datos OLTP AdventureWorks."
+              name="Dimensión de variación lenta"
+              version="3">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Especifica la instrucción SELECT utilizada para crear un conjunto de filas de esquema."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT [Cliente_Codigo], [Empleado_Codigo], [Producto_Codigo], [Proveedor_Codigo], [Ventas_Descuento], [Ventas_Monto], [Ventas_NOrden], [Ventas_OrderDate], [Ventas_PUnitario], [Ventas_Unidades] FROM [dbo].[StageVentas]</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica la cláusula WHERE de la instrucción SELECT que selecciona la fila actual de entre filas con claves empresariales idénticas."
+                  name="CurrentRowWhere"></property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indica si las actualizaciones de atributos históricos se dirigen a la salida de transformación para actualizaciones de atributos variables."
+                  name="UpdateChangingAttributeHistory">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indica si se produce un error de transformación cuando las columnas con atributos fijos contienen cambios."
+                  name="FailOnFixedAttributeChange">false</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica el nombre de columna para el miembro deducido."
+                  name="InferredMemberIndicator"></property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indica si se detectan las actualizaciones de miembros deducidos."
+                  name="EnableInferredMember">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indica si se produce un error de transformación cuando se produce un error de búsqueda de un registro existente."
+                  name="FailOnLookupFailure">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica que todas las filas de la entrada sean nuevas o que la transformación detecte el tipo de cambio."
+                  name="IncomingRowChangeType"
+                  typeConverter="IncomingRowChangeType">1</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica la página de códigos de columna para utilizar cuando la información de página de códigos no está disponible en el origen de datos."
+                  name="DefaultCodePage">1252</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Ventas\Dimensión de variación lenta.Connections[LookupConnection]"
+                  connectionManagerID="Package.ConnectionManagers[.,1450.stageNorthwind.sa]"
+                  connectionManagerRefId="Package.ConnectionManagers[.,1450.stageNorthwind.sa]"
+                  description="Define la conexión que se debe usar para búsquedas en la tabla de dimensiones"
+                  name="LookupConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Ventas\Dimensión de variación lenta.Inputs[Entrada de dimensión de variación lenta]"
+                  name="Entrada de dimensión de variación lenta">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Ventas\Dimensión de variación lenta.Inputs[Entrada de dimensión de variación lenta].Columns[Copy of CustomerID]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="5"
+                      cachedName="Copy of CustomerID"
+                      externalMetadataColumnId="Package\Ventas\Dimensión de variación lenta.Inputs[Entrada de dimensión de variación lenta].ExternalColumns[Cliente_Codigo]"
+                      lineageId="Package\Ventas\Conversión de datos.Outputs[Salida de conversión de datos].Columns[Copy of CustomerID]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          name="ColumnType"
+                          typeConverter="ColumnType">1</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Ventas\Dimensión de variación lenta.Inputs[Entrada de dimensión de variación lenta].Columns[EmployeeID]"
+                      cachedDataType="i4"
+                      cachedName="EmployeeID"
+                      externalMetadataColumnId="Package\Ventas\Dimensión de variación lenta.Inputs[Entrada de dimensión de variación lenta].ExternalColumns[Empleado_Codigo]"
+                      lineageId="Package\Ventas\Origen de NORTHWNDINNERJOIN.Outputs[Salida de origen de OLE DB].Columns[EmployeeID]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          name="ColumnType"
+                          typeConverter="ColumnType">2</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Ventas\Dimensión de variación lenta.Inputs[Entrada de dimensión de variación lenta].Columns[Copy of ProductID]"
+                      cachedDataType="i4"
+                      cachedName="Copy of ProductID"
+                      externalMetadataColumnId="Package\Ventas\Dimensión de variación lenta.Inputs[Entrada de dimensión de variación lenta].ExternalColumns[Producto_Codigo]"
+                      lineageId="Package\Ventas\Conversión de datos.Outputs[Salida de conversión de datos].Columns[Copy of ProductID]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          name="ColumnType"
+                          typeConverter="ColumnType">2</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Ventas\Dimensión de variación lenta.Inputs[Entrada de dimensión de variación lenta].Columns[Copy of SupplierID]"
+                      cachedDataType="i4"
+                      cachedName="Copy of SupplierID"
+                      externalMetadataColumnId="Package\Ventas\Dimensión de variación lenta.Inputs[Entrada de dimensión de variación lenta].ExternalColumns[Proveedor_Codigo]"
+                      lineageId="Package\Ventas\Conversión de datos.Outputs[Salida de conversión de datos].Columns[Copy of SupplierID]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          name="ColumnType"
+                          typeConverter="ColumnType">2</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Ventas\Dimensión de variación lenta.Inputs[Entrada de dimensión de variación lenta].Columns[Copy of Discount]"
+                      cachedDataType="numeric"
+                      cachedName="Copy of Discount"
+                      cachedPrecision="18"
+                      externalMetadataColumnId="Package\Ventas\Dimensión de variación lenta.Inputs[Entrada de dimensión de variación lenta].ExternalColumns[Ventas_Descuento]"
+                      lineageId="Package\Ventas\Conversión de datos.Outputs[Salida de conversión de datos].Columns[Copy of Discount]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          name="ColumnType"
+                          typeConverter="ColumnType">2</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Ventas\Dimensión de variación lenta.Inputs[Entrada de dimensión de variación lenta].Columns[Copy of Monto]"
+                      cachedDataType="numeric"
+                      cachedName="Copy of Monto"
+                      cachedPrecision="18"
+                      externalMetadataColumnId="Package\Ventas\Dimensión de variación lenta.Inputs[Entrada de dimensión de variación lenta].ExternalColumns[Ventas_Monto]"
+                      lineageId="Package\Ventas\Conversión de datos.Outputs[Salida de conversión de datos].Columns[Copy of Monto]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          name="ColumnType"
+                          typeConverter="ColumnType">2</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Ventas\Dimensión de variación lenta.Inputs[Entrada de dimensión de variación lenta].Columns[OrderID]"
+                      cachedDataType="i4"
+                      cachedName="OrderID"
+                      externalMetadataColumnId="Package\Ventas\Dimensión de variación lenta.Inputs[Entrada de dimensión de variación lenta].ExternalColumns[Ventas_NOrden]"
+                      lineageId="Package\Ventas\Origen de NORTHWNDINNERJOIN.Outputs[Salida de origen de OLE DB].Columns[OrderID]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          name="ColumnType"
+                          typeConverter="ColumnType">2</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Ventas\Dimensión de variación lenta.Inputs[Entrada de dimensión de variación lenta].Columns[OrderDate]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="OrderDate"
+                      externalMetadataColumnId="Package\Ventas\Dimensión de variación lenta.Inputs[Entrada de dimensión de variación lenta].ExternalColumns[Ventas_OrderDate]"
+                      lineageId="Package\Ventas\Origen de NORTHWNDINNERJOIN.Outputs[Salida de origen de OLE DB].Columns[OrderDate]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          name="ColumnType"
+                          typeConverter="ColumnType">2</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Ventas\Dimensión de variación lenta.Inputs[Entrada de dimensión de variación lenta].Columns[Copy of UnitPrice]"
+                      cachedDataType="numeric"
+                      cachedName="Copy of UnitPrice"
+                      cachedPrecision="18"
+                      externalMetadataColumnId="Package\Ventas\Dimensión de variación lenta.Inputs[Entrada de dimensión de variación lenta].ExternalColumns[Ventas_PUnitario]"
+                      lineageId="Package\Ventas\Conversión de datos.Outputs[Salida de conversión de datos].Columns[Copy of UnitPrice]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          name="ColumnType"
+                          typeConverter="ColumnType">2</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Ventas\Dimensión de variación lenta.Inputs[Entrada de dimensión de variación lenta].Columns[Copy of UnitsInStock]"
+                      cachedDataType="i4"
+                      cachedName="Copy of UnitsInStock"
+                      externalMetadataColumnId="Package\Ventas\Dimensión de variación lenta.Inputs[Entrada de dimensión de variación lenta].ExternalColumns[Ventas_Unidades]"
+                      lineageId="Package\Ventas\Conversión de datos.Outputs[Salida de conversión de datos].Columns[Copy of UnitsInStock]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          name="ColumnType"
+                          typeConverter="ColumnType">2</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Ventas\Dimensión de variación lenta.Inputs[Entrada de dimensión de variación lenta].ExternalColumns[Cliente_Codigo]"
+                      codePage="1252"
+                      dataType="str"
+                      length="5"
+                      name="Cliente_Codigo" />
+                    <externalMetadataColumn
+                      refId="Package\Ventas\Dimensión de variación lenta.Inputs[Entrada de dimensión de variación lenta].ExternalColumns[Empleado_Codigo]"
+                      dataType="i4"
+                      name="Empleado_Codigo" />
+                    <externalMetadataColumn
+                      refId="Package\Ventas\Dimensión de variación lenta.Inputs[Entrada de dimensión de variación lenta].ExternalColumns[Producto_Codigo]"
+                      dataType="i4"
+                      name="Producto_Codigo" />
+                    <externalMetadataColumn
+                      refId="Package\Ventas\Dimensión de variación lenta.Inputs[Entrada de dimensión de variación lenta].ExternalColumns[Proveedor_Codigo]"
+                      dataType="i4"
+                      name="Proveedor_Codigo" />
+                    <externalMetadataColumn
+                      refId="Package\Ventas\Dimensión de variación lenta.Inputs[Entrada de dimensión de variación lenta].ExternalColumns[Ventas_Descuento]"
+                      dataType="numeric"
+                      name="Ventas_Descuento"
+                      precision="15"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\Ventas\Dimensión de variación lenta.Inputs[Entrada de dimensión de variación lenta].ExternalColumns[Ventas_Monto]"
+                      dataType="numeric"
+                      name="Ventas_Monto"
+                      precision="15"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\Ventas\Dimensión de variación lenta.Inputs[Entrada de dimensión de variación lenta].ExternalColumns[Ventas_NOrden]"
+                      dataType="i4"
+                      name="Ventas_NOrden" />
+                    <externalMetadataColumn
+                      refId="Package\Ventas\Dimensión de variación lenta.Inputs[Entrada de dimensión de variación lenta].ExternalColumns[Ventas_OrderDate]"
+                      dataType="dbTimeStamp"
+                      name="Ventas_OrderDate" />
+                    <externalMetadataColumn
+                      refId="Package\Ventas\Dimensión de variación lenta.Inputs[Entrada de dimensión de variación lenta].ExternalColumns[Ventas_PUnitario]"
+                      dataType="numeric"
+                      name="Ventas_PUnitario"
+                      precision="15"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\Ventas\Dimensión de variación lenta.Inputs[Entrada de dimensión de variación lenta].ExternalColumns[Ventas_Unidades]"
+                      dataType="i4"
+                      name="Ventas_Unidades" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Ventas\Dimensión de variación lenta.Outputs[Salida sin cambios]"
+                  description="Filas sin cambios"
+                  exclusionGroup="1"
+                  name="Salida sin cambios"
+                  synchronousInputId="Package\Ventas\Dimensión de variación lenta.Inputs[Entrada de dimensión de variación lenta]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Ventas\Dimensión de variación lenta.Outputs[Nueva salida]"
+                  description="Nuevas filas"
+                  exclusionGroup="1"
+                  name="Nueva salida"
+                  synchronousInputId="Package\Ventas\Dimensión de variación lenta.Inputs[Entrada de dimensión de variación lenta]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Ventas\Dimensión de variación lenta.Outputs[Salida de atributo fijo]"
+                  description="Filas con cambios en columnas etiquetadas FixedAttribute"
+                  exclusionGroup="1"
+                  name="Salida de atributo fijo"
+                  synchronousInputId="Package\Ventas\Dimensión de variación lenta.Inputs[Entrada de dimensión de variación lenta]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Ventas\Dimensión de variación lenta.Outputs[Salida de actualizaciones de atributos variables]"
+                  description="Estas filas contienen información nueva para cambios de columnas ChangingAttribute (tipo 1)"
+                  exclusionGroup="1"
+                  name="Salida de actualizaciones de atributos variables"
+                  synchronousInputId="Package\Ventas\Dimensión de variación lenta.Inputs[Entrada de dimensión de variación lenta]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Ventas\Dimensión de variación lenta.Outputs[Salida de inserciones de atributos históricos]"
+                  description="Los cambios de HistoricalAttribute (tipo 2) crean estas nuevas filas"
+                  exclusionGroup="2"
+                  name="Salida de inserciones de atributos históricos"
+                  synchronousInputId="Package\Ventas\Dimensión de variación lenta.Inputs[Entrada de dimensión de variación lenta]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Ventas\Dimensión de variación lenta.Outputs[Salida de actualizaciones de miembros deducidos]"
+                  description="Información para actualizar fila de dimensión inicial sin rellenar"
+                  exclusionGroup="1"
+                  name="Salida de actualizaciones de miembros deducidos"
+                  synchronousInputId="Package\Ventas\Dimensión de variación lenta.Inputs[Entrada de dimensión de variación lenta]">
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Ventas\Insertar destino"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="Destino de OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;4"
+              description="Destino de OLE DB"
+              name="Insertar destino"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Número de segundos antes de que se agote el tiempo de espera de un comando. Un valor de 0 indica un tiempo de espera infinito."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica el nombre del objeto de base de datos usado para abrir un conjunto de filas."
+                  name="OpenRowset">[dbo].[StageVentas]</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica la variable que contiene el nombre del objeto de base de datos usado para abrir un conjunto de filas."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="Comando SQL para ejecutar."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica la página de códigos de columna para utilizar cuando la información de página de códigos no está disponible en el origen de datos."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Fuerza el uso del valor de la propiedad DefaultCodePage al describir datos de caracteres."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica el modo utilizado para obtener acceso a la base de datos."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indica si los valores proporcionados para columnas de identidad se van a copiar al destino. Si es False, los valores de las columnas de identidad se generan automáticamente en el destino. Solo se aplica si está activada la carga rápida."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indica si las columnas que contienen NULL tendrán NULL insertado en el destino. Si es False, las columnas que contienen NULL tendrán sus valores predeterminados insertados en el destino. Solo se aplica si está activada la carga rápida."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica opciones para usar con la carga rápida. Solo se aplica si está activada la carga rápida."
+                  name="FastLoadOptions"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica cuándo se emiten confirmaciones durante la inserción de datos. El valor 0 especifica que se emitirá una confirmación al final de la inserción de datos. Solo se aplica si está activada la carga rápida."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Ventas\Insertar destino.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[.,1450.stageNorthwind.sa]"
+                  connectionManagerRefId="Package.ConnectionManagers[.,1450.stageNorthwind.sa]"
+                  description="La conexión de tiempo de ejecución OLE DB usada para obtener acceso a la base de datos."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Ventas\Insertar destino.Inputs[Entrada de destino de OLE DB]"
+                  errorOrTruncationOperation="Insertar"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="Entrada de destino de OLE DB">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Ventas\Insertar destino.Inputs[Entrada de destino de OLE DB].Columns[Copy of CustomerID]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="5"
+                      cachedName="Copy of CustomerID"
+                      externalMetadataColumnId="Package\Ventas\Insertar destino.Inputs[Entrada de destino de OLE DB].ExternalColumns[Cliente_Codigo]"
+                      lineageId="Package\Ventas\Conversión de datos.Outputs[Salida de conversión de datos].Columns[Copy of CustomerID]" />
+                    <inputColumn
+                      refId="Package\Ventas\Insertar destino.Inputs[Entrada de destino de OLE DB].Columns[EmployeeID]"
+                      cachedDataType="i4"
+                      cachedName="EmployeeID"
+                      externalMetadataColumnId="Package\Ventas\Insertar destino.Inputs[Entrada de destino de OLE DB].ExternalColumns[Empleado_Codigo]"
+                      lineageId="Package\Ventas\Origen de NORTHWNDINNERJOIN.Outputs[Salida de origen de OLE DB].Columns[EmployeeID]" />
+                    <inputColumn
+                      refId="Package\Ventas\Insertar destino.Inputs[Entrada de destino de OLE DB].Columns[Copy of ProductID]"
+                      cachedDataType="i4"
+                      cachedName="Copy of ProductID"
+                      externalMetadataColumnId="Package\Ventas\Insertar destino.Inputs[Entrada de destino de OLE DB].ExternalColumns[Producto_Codigo]"
+                      lineageId="Package\Ventas\Conversión de datos.Outputs[Salida de conversión de datos].Columns[Copy of ProductID]" />
+                    <inputColumn
+                      refId="Package\Ventas\Insertar destino.Inputs[Entrada de destino de OLE DB].Columns[Copy of SupplierID]"
+                      cachedDataType="i4"
+                      cachedName="Copy of SupplierID"
+                      externalMetadataColumnId="Package\Ventas\Insertar destino.Inputs[Entrada de destino de OLE DB].ExternalColumns[Proveedor_Codigo]"
+                      lineageId="Package\Ventas\Conversión de datos.Outputs[Salida de conversión de datos].Columns[Copy of SupplierID]" />
+                    <inputColumn
+                      refId="Package\Ventas\Insertar destino.Inputs[Entrada de destino de OLE DB].Columns[OrderDate]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="OrderDate"
+                      externalMetadataColumnId="Package\Ventas\Insertar destino.Inputs[Entrada de destino de OLE DB].ExternalColumns[Ventas_OrderDate]"
+                      lineageId="Package\Ventas\Origen de NORTHWNDINNERJOIN.Outputs[Salida de origen de OLE DB].Columns[OrderDate]" />
+                    <inputColumn
+                      refId="Package\Ventas\Insertar destino.Inputs[Entrada de destino de OLE DB].Columns[OrderID]"
+                      cachedDataType="i4"
+                      cachedName="OrderID"
+                      externalMetadataColumnId="Package\Ventas\Insertar destino.Inputs[Entrada de destino de OLE DB].ExternalColumns[Ventas_NOrden]"
+                      lineageId="Package\Ventas\Origen de NORTHWNDINNERJOIN.Outputs[Salida de origen de OLE DB].Columns[OrderID]" />
+                    <inputColumn
+                      refId="Package\Ventas\Insertar destino.Inputs[Entrada de destino de OLE DB].Columns[Copy of Monto]"
+                      cachedDataType="numeric"
+                      cachedName="Copy of Monto"
+                      cachedPrecision="18"
+                      externalMetadataColumnId="Package\Ventas\Insertar destino.Inputs[Entrada de destino de OLE DB].ExternalColumns[Ventas_Monto]"
+                      lineageId="Package\Ventas\Conversión de datos.Outputs[Salida de conversión de datos].Columns[Copy of Monto]" />
+                    <inputColumn
+                      refId="Package\Ventas\Insertar destino.Inputs[Entrada de destino de OLE DB].Columns[Copy of UnitsInStock]"
+                      cachedDataType="i4"
+                      cachedName="Copy of UnitsInStock"
+                      externalMetadataColumnId="Package\Ventas\Insertar destino.Inputs[Entrada de destino de OLE DB].ExternalColumns[Ventas_Unidades]"
+                      lineageId="Package\Ventas\Conversión de datos.Outputs[Salida de conversión de datos].Columns[Copy of UnitsInStock]" />
+                    <inputColumn
+                      refId="Package\Ventas\Insertar destino.Inputs[Entrada de destino de OLE DB].Columns[Copy of UnitPrice]"
+                      cachedDataType="numeric"
+                      cachedName="Copy of UnitPrice"
+                      cachedPrecision="18"
+                      externalMetadataColumnId="Package\Ventas\Insertar destino.Inputs[Entrada de destino de OLE DB].ExternalColumns[Ventas_PUnitario]"
+                      lineageId="Package\Ventas\Conversión de datos.Outputs[Salida de conversión de datos].Columns[Copy of UnitPrice]" />
+                    <inputColumn
+                      refId="Package\Ventas\Insertar destino.Inputs[Entrada de destino de OLE DB].Columns[Copy of Discount]"
+                      cachedDataType="numeric"
+                      cachedName="Copy of Discount"
+                      cachedPrecision="18"
+                      externalMetadataColumnId="Package\Ventas\Insertar destino.Inputs[Entrada de destino de OLE DB].ExternalColumns[Ventas_Descuento]"
+                      lineageId="Package\Ventas\Conversión de datos.Outputs[Salida de conversión de datos].Columns[Copy of Discount]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Ventas\Insertar destino.Inputs[Entrada de destino de OLE DB].ExternalColumns[Cliente_Codigo]"
+                      codePage="1252"
+                      dataType="str"
+                      length="5"
+                      name="Cliente_Codigo" />
+                    <externalMetadataColumn
+                      refId="Package\Ventas\Insertar destino.Inputs[Entrada de destino de OLE DB].ExternalColumns[Empleado_Codigo]"
+                      dataType="i4"
+                      name="Empleado_Codigo" />
+                    <externalMetadataColumn
+                      refId="Package\Ventas\Insertar destino.Inputs[Entrada de destino de OLE DB].ExternalColumns[Producto_Codigo]"
+                      dataType="i4"
+                      name="Producto_Codigo" />
+                    <externalMetadataColumn
+                      refId="Package\Ventas\Insertar destino.Inputs[Entrada de destino de OLE DB].ExternalColumns[Proveedor_Codigo]"
+                      dataType="i4"
+                      name="Proveedor_Codigo" />
+                    <externalMetadataColumn
+                      refId="Package\Ventas\Insertar destino.Inputs[Entrada de destino de OLE DB].ExternalColumns[Ventas_OrderDate]"
+                      dataType="dbTimeStamp"
+                      name="Ventas_OrderDate" />
+                    <externalMetadataColumn
+                      refId="Package\Ventas\Insertar destino.Inputs[Entrada de destino de OLE DB].ExternalColumns[Ventas_NOrden]"
+                      dataType="i4"
+                      name="Ventas_NOrden" />
+                    <externalMetadataColumn
+                      refId="Package\Ventas\Insertar destino.Inputs[Entrada de destino de OLE DB].ExternalColumns[Ventas_Monto]"
+                      dataType="numeric"
+                      name="Ventas_Monto"
+                      precision="15"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\Ventas\Insertar destino.Inputs[Entrada de destino de OLE DB].ExternalColumns[Ventas_Unidades]"
+                      dataType="i4"
+                      name="Ventas_Unidades" />
+                    <externalMetadataColumn
+                      refId="Package\Ventas\Insertar destino.Inputs[Entrada de destino de OLE DB].ExternalColumns[Ventas_PUnitario]"
+                      dataType="numeric"
+                      name="Ventas_PUnitario"
+                      precision="15"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\Ventas\Insertar destino.Inputs[Entrada de destino de OLE DB].ExternalColumns[Ventas_Descuento]"
+                      dataType="numeric"
+                      name="Ventas_Descuento"
+                      precision="15"
+                      scale="2" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Ventas\Insertar destino.Outputs[Salida de error de destino de OLE DB]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Salida de error de destino de OLE DB"
+                  synchronousInputId="Package\Ventas\Insertar destino.Inputs[Entrada de destino de OLE DB]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Ventas\Insertar destino.Outputs[Salida de error de destino de OLE DB].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Ventas\Insertar destino.Outputs[Salida de error de destino de OLE DB].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Ventas\Insertar destino.Outputs[Salida de error de destino de OLE DB].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Ventas\Insertar destino.Outputs[Salida de error de destino de OLE DB].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Ventas\Origen de NORTHWNDINNERJOIN"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="Origen de OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;7"
+              description="Origen de OLE DB"
+              name="Origen de NORTHWNDINNERJOIN"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Número de segundos antes de que se agote el tiempo de espera de un comando. Un valor de 0 indica un tiempo de espera infinito."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica el nombre del objeto de base de datos usado para abrir un conjunto de filas."
+                  name="OpenRowset"></property>
+                <property
+                  dataType="System.String"
+                  description="Especifica la variable que contiene el nombre del objeto de base de datos usado para abrir un conjunto de filas."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="Comando SQL para ejecutar."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT 
+    cu.CustomerID,
+    e.EmployeeID,
+    p.ProductID,
+    s.SupplierID,
+    o.OrderDate,
+    o.OrderID,
+    (od.UnitPrice * od.Quantity) AS Monto,
+    od.UnitPrice,
+    p.UnitsInStock,
+    od.Discount,
+    od.Quantity
+FROM Orders AS o
+INNER JOIN Customers AS cu
+    ON o.CustomerID = cu.CustomerID
+INNER JOIN Employees AS e
+    ON o.EmployeeID = e.EmployeeID
+INNER JOIN [Order Details] AS od
+    ON od.OrderID = o.OrderID
+INNER JOIN Products AS p
+    ON p.ProductID = od.ProductID
+INNER JOIN Suppliers AS s
+    ON p.SupplierID = s.SupplierID;</property>
+                <property
+                  dataType="System.String"
+                  description="Variable que contiene el comando SQL para ejecutar."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica la página de códigos de columna para utilizar cuando la información de página de códigos no está disponible en el origen de datos."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Fuerza el uso del valor de la propiedad DefaultCodePage al describir datos de caracteres."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica el modo utilizado para obtener acceso a la base de datos."
+                  name="AccessMode"
+                  typeConverter="AccessMode">2</property>
+                <property
+                  dataType="System.String"
+                  description="Asignaciones entre los parámetros del comando SQL y las variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Ventas\Origen de NORTHWNDINNERJOIN.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[.,1450.NORTHWND.sa]"
+                  connectionManagerRefId="Package.ConnectionManagers[.,1450.NORTHWND.sa]"
+                  description="La conexión de tiempo de ejecución OLE DB usada para obtener acceso a la base de datos."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Ventas\Origen de NORTHWNDINNERJOIN.Outputs[Salida de origen de OLE DB]"
+                  name="Salida de origen de OLE DB">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Ventas\Origen de NORTHWNDINNERJOIN.Outputs[Salida de origen de OLE DB].Columns[CustomerID]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Ventas\Origen de NORTHWNDINNERJOIN.Outputs[Salida de origen de OLE DB].ExternalColumns[CustomerID]"
+                      length="5"
+                      lineageId="Package\Ventas\Origen de NORTHWNDINNERJOIN.Outputs[Salida de origen de OLE DB].Columns[CustomerID]"
+                      name="CustomerID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Ventas\Origen de NORTHWNDINNERJOIN.Outputs[Salida de origen de OLE DB].Columns[EmployeeID]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Ventas\Origen de NORTHWNDINNERJOIN.Outputs[Salida de origen de OLE DB].ExternalColumns[EmployeeID]"
+                      lineageId="Package\Ventas\Origen de NORTHWNDINNERJOIN.Outputs[Salida de origen de OLE DB].Columns[EmployeeID]"
+                      name="EmployeeID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Ventas\Origen de NORTHWNDINNERJOIN.Outputs[Salida de origen de OLE DB].Columns[OrderDate]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Ventas\Origen de NORTHWNDINNERJOIN.Outputs[Salida de origen de OLE DB].ExternalColumns[OrderDate]"
+                      lineageId="Package\Ventas\Origen de NORTHWNDINNERJOIN.Outputs[Salida de origen de OLE DB].Columns[OrderDate]"
+                      name="OrderDate"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Ventas\Origen de NORTHWNDINNERJOIN.Outputs[Salida de origen de OLE DB].Columns[OrderID]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Ventas\Origen de NORTHWNDINNERJOIN.Outputs[Salida de origen de OLE DB].ExternalColumns[OrderID]"
+                      lineageId="Package\Ventas\Origen de NORTHWNDINNERJOIN.Outputs[Salida de origen de OLE DB].Columns[OrderID]"
+                      name="OrderID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Ventas\Origen de NORTHWNDINNERJOIN.Outputs[Salida de origen de OLE DB].Columns[Monto]"
+                      dataType="cy"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Ventas\Origen de NORTHWNDINNERJOIN.Outputs[Salida de origen de OLE DB].ExternalColumns[Monto]"
+                      lineageId="Package\Ventas\Origen de NORTHWNDINNERJOIN.Outputs[Salida de origen de OLE DB].Columns[Monto]"
+                      name="Monto"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Ventas\Origen de NORTHWNDINNERJOIN.Outputs[Salida de origen de OLE DB].Columns[UnitPrice]"
+                      dataType="cy"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Ventas\Origen de NORTHWNDINNERJOIN.Outputs[Salida de origen de OLE DB].ExternalColumns[UnitPrice]"
+                      lineageId="Package\Ventas\Origen de NORTHWNDINNERJOIN.Outputs[Salida de origen de OLE DB].Columns[UnitPrice]"
+                      name="UnitPrice"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Ventas\Origen de NORTHWNDINNERJOIN.Outputs[Salida de origen de OLE DB].Columns[UnitsInStock]"
+                      dataType="i2"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Ventas\Origen de NORTHWNDINNERJOIN.Outputs[Salida de origen de OLE DB].ExternalColumns[UnitsInStock]"
+                      lineageId="Package\Ventas\Origen de NORTHWNDINNERJOIN.Outputs[Salida de origen de OLE DB].Columns[UnitsInStock]"
+                      name="UnitsInStock"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Ventas\Origen de NORTHWNDINNERJOIN.Outputs[Salida de origen de OLE DB].Columns[Discount]"
+                      dataType="r4"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Ventas\Origen de NORTHWNDINNERJOIN.Outputs[Salida de origen de OLE DB].ExternalColumns[Discount]"
+                      lineageId="Package\Ventas\Origen de NORTHWNDINNERJOIN.Outputs[Salida de origen de OLE DB].Columns[Discount]"
+                      name="Discount"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Ventas\Origen de NORTHWNDINNERJOIN.Outputs[Salida de origen de OLE DB].Columns[Quantity]"
+                      dataType="i2"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Ventas\Origen de NORTHWNDINNERJOIN.Outputs[Salida de origen de OLE DB].ExternalColumns[Quantity]"
+                      lineageId="Package\Ventas\Origen de NORTHWNDINNERJOIN.Outputs[Salida de origen de OLE DB].Columns[Quantity]"
+                      name="Quantity"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Ventas\Origen de NORTHWNDINNERJOIN.Outputs[Salida de origen de OLE DB].Columns[SupplierID]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Ventas\Origen de NORTHWNDINNERJOIN.Outputs[Salida de origen de OLE DB].ExternalColumns[SupplierID]"
+                      lineageId="Package\Ventas\Origen de NORTHWNDINNERJOIN.Outputs[Salida de origen de OLE DB].Columns[SupplierID]"
+                      name="SupplierID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Ventas\Origen de NORTHWNDINNERJOIN.Outputs[Salida de origen de OLE DB].Columns[ProductID]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Ventas\Origen de NORTHWNDINNERJOIN.Outputs[Salida de origen de OLE DB].ExternalColumns[ProductID]"
+                      lineageId="Package\Ventas\Origen de NORTHWNDINNERJOIN.Outputs[Salida de origen de OLE DB].Columns[ProductID]"
+                      name="ProductID"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Ventas\Origen de NORTHWNDINNERJOIN.Outputs[Salida de origen de OLE DB].ExternalColumns[CustomerID]"
+                      dataType="wstr"
+                      length="5"
+                      name="CustomerID" />
+                    <externalMetadataColumn
+                      refId="Package\Ventas\Origen de NORTHWNDINNERJOIN.Outputs[Salida de origen de OLE DB].ExternalColumns[EmployeeID]"
+                      dataType="i4"
+                      name="EmployeeID" />
+                    <externalMetadataColumn
+                      refId="Package\Ventas\Origen de NORTHWNDINNERJOIN.Outputs[Salida de origen de OLE DB].ExternalColumns[OrderDate]"
+                      dataType="dbTimeStamp"
+                      name="OrderDate" />
+                    <externalMetadataColumn
+                      refId="Package\Ventas\Origen de NORTHWNDINNERJOIN.Outputs[Salida de origen de OLE DB].ExternalColumns[OrderID]"
+                      dataType="i4"
+                      name="OrderID" />
+                    <externalMetadataColumn
+                      refId="Package\Ventas\Origen de NORTHWNDINNERJOIN.Outputs[Salida de origen de OLE DB].ExternalColumns[Monto]"
+                      dataType="cy"
+                      name="Monto" />
+                    <externalMetadataColumn
+                      refId="Package\Ventas\Origen de NORTHWNDINNERJOIN.Outputs[Salida de origen de OLE DB].ExternalColumns[UnitPrice]"
+                      dataType="cy"
+                      name="UnitPrice" />
+                    <externalMetadataColumn
+                      refId="Package\Ventas\Origen de NORTHWNDINNERJOIN.Outputs[Salida de origen de OLE DB].ExternalColumns[UnitsInStock]"
+                      dataType="i2"
+                      name="UnitsInStock" />
+                    <externalMetadataColumn
+                      refId="Package\Ventas\Origen de NORTHWNDINNERJOIN.Outputs[Salida de origen de OLE DB].ExternalColumns[Discount]"
+                      dataType="r4"
+                      name="Discount" />
+                    <externalMetadataColumn
+                      refId="Package\Ventas\Origen de NORTHWNDINNERJOIN.Outputs[Salida de origen de OLE DB].ExternalColumns[Quantity]"
+                      dataType="i2"
+                      name="Quantity" />
+                    <externalMetadataColumn
+                      refId="Package\Ventas\Origen de NORTHWNDINNERJOIN.Outputs[Salida de origen de OLE DB].ExternalColumns[SupplierID]"
+                      dataType="i4"
+                      name="SupplierID" />
+                    <externalMetadataColumn
+                      refId="Package\Ventas\Origen de NORTHWNDINNERJOIN.Outputs[Salida de origen de OLE DB].ExternalColumns[ProductID]"
+                      dataType="i4"
+                      name="ProductID" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Ventas\Origen de NORTHWNDINNERJOIN.Outputs[Salida de error de origen de OLE DB]"
+                  isErrorOut="true"
+                  name="Salida de error de origen de OLE DB">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Ventas\Origen de NORTHWNDINNERJOIN.Outputs[Salida de error de origen de OLE DB].Columns[CustomerID]"
+                      dataType="wstr"
+                      length="5"
+                      lineageId="Package\Ventas\Origen de NORTHWNDINNERJOIN.Outputs[Salida de error de origen de OLE DB].Columns[CustomerID]"
+                      name="CustomerID" />
+                    <outputColumn
+                      refId="Package\Ventas\Origen de NORTHWNDINNERJOIN.Outputs[Salida de error de origen de OLE DB].Columns[EmployeeID]"
+                      dataType="i4"
+                      lineageId="Package\Ventas\Origen de NORTHWNDINNERJOIN.Outputs[Salida de error de origen de OLE DB].Columns[EmployeeID]"
+                      name="EmployeeID" />
+                    <outputColumn
+                      refId="Package\Ventas\Origen de NORTHWNDINNERJOIN.Outputs[Salida de error de origen de OLE DB].Columns[ProductID]"
+                      dataType="i4"
+                      lineageId="Package\Ventas\Origen de NORTHWNDINNERJOIN.Outputs[Salida de error de origen de OLE DB].Columns[ProductID]"
+                      name="ProductID" />
+                    <outputColumn
+                      refId="Package\Ventas\Origen de NORTHWNDINNERJOIN.Outputs[Salida de error de origen de OLE DB].Columns[SupplierID]"
+                      dataType="i4"
+                      lineageId="Package\Ventas\Origen de NORTHWNDINNERJOIN.Outputs[Salida de error de origen de OLE DB].Columns[SupplierID]"
+                      name="SupplierID" />
+                    <outputColumn
+                      refId="Package\Ventas\Origen de NORTHWNDINNERJOIN.Outputs[Salida de error de origen de OLE DB].Columns[OrderDate]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Ventas\Origen de NORTHWNDINNERJOIN.Outputs[Salida de error de origen de OLE DB].Columns[OrderDate]"
+                      name="OrderDate" />
+                    <outputColumn
+                      refId="Package\Ventas\Origen de NORTHWNDINNERJOIN.Outputs[Salida de error de origen de OLE DB].Columns[OrderID]"
+                      dataType="i4"
+                      lineageId="Package\Ventas\Origen de NORTHWNDINNERJOIN.Outputs[Salida de error de origen de OLE DB].Columns[OrderID]"
+                      name="OrderID" />
+                    <outputColumn
+                      refId="Package\Ventas\Origen de NORTHWNDINNERJOIN.Outputs[Salida de error de origen de OLE DB].Columns[Monto]"
+                      dataType="cy"
+                      lineageId="Package\Ventas\Origen de NORTHWNDINNERJOIN.Outputs[Salida de error de origen de OLE DB].Columns[Monto]"
+                      name="Monto" />
+                    <outputColumn
+                      refId="Package\Ventas\Origen de NORTHWNDINNERJOIN.Outputs[Salida de error de origen de OLE DB].Columns[UnitPrice]"
+                      dataType="cy"
+                      lineageId="Package\Ventas\Origen de NORTHWNDINNERJOIN.Outputs[Salida de error de origen de OLE DB].Columns[UnitPrice]"
+                      name="UnitPrice" />
+                    <outputColumn
+                      refId="Package\Ventas\Origen de NORTHWNDINNERJOIN.Outputs[Salida de error de origen de OLE DB].Columns[UnitsInStock]"
+                      dataType="i2"
+                      lineageId="Package\Ventas\Origen de NORTHWNDINNERJOIN.Outputs[Salida de error de origen de OLE DB].Columns[UnitsInStock]"
+                      name="UnitsInStock" />
+                    <outputColumn
+                      refId="Package\Ventas\Origen de NORTHWNDINNERJOIN.Outputs[Salida de error de origen de OLE DB].Columns[Discount]"
+                      dataType="r4"
+                      lineageId="Package\Ventas\Origen de NORTHWNDINNERJOIN.Outputs[Salida de error de origen de OLE DB].Columns[Discount]"
+                      name="Discount" />
+                    <outputColumn
+                      refId="Package\Ventas\Origen de NORTHWNDINNERJOIN.Outputs[Salida de error de origen de OLE DB].Columns[Quantity]"
+                      dataType="i2"
+                      lineageId="Package\Ventas\Origen de NORTHWNDINNERJOIN.Outputs[Salida de error de origen de OLE DB].Columns[Quantity]"
+                      name="Quantity" />
+                    <outputColumn
+                      refId="Package\Ventas\Origen de NORTHWNDINNERJOIN.Outputs[Salida de error de origen de OLE DB].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Ventas\Origen de NORTHWNDINNERJOIN.Outputs[Salida de error de origen de OLE DB].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Ventas\Origen de NORTHWNDINNERJOIN.Outputs[Salida de error de origen de OLE DB].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Ventas\Origen de NORTHWNDINNERJOIN.Outputs[Salida de error de origen de OLE DB].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Ventas\Recuento de filas Ing"
+              componentClassID="Microsoft.RowCount"
+              contactInfo="Recuento de filas;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;0"
+              description="Cuenta las filas a medida que pasan por un flujo de datos. Por ejemplo, se usa el número de filas procesadas para determinar si deben o no realizarse operaciones de limpieza o actualizar el texto de un mensaje de correo electrónico para comunicar el estado de procesamiento."
+              name="Recuento de filas Ing">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Especifica la variable que contiene el recuento de filas."
+                  name="VariableName">User::Agregar</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\Ventas\Recuento de filas Ing.Inputs[Entrada de Recuento de filas 1]"
+                  hasSideEffects="true"
+                  name="Entrada de Recuento de filas 1">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Ventas\Recuento de filas Ing.Outputs[Salida de Recuento de filas 1]"
+                  name="Salida de Recuento de filas 1"
+                  synchronousInputId="Package\Ventas\Recuento de filas Ing.Inputs[Entrada de Recuento de filas 1]">
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Ventas\Recuento de filas Mod"
+              componentClassID="Microsoft.RowCount"
+              contactInfo="Recuento de filas;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;0"
+              description="Cuenta las filas a medida que pasan por un flujo de datos. Por ejemplo, se usa el número de filas procesadas para determinar si deben o no realizarse operaciones de limpieza o actualizar el texto de un mensaje de correo electrónico para comunicar el estado de procesamiento."
+              name="Recuento de filas Mod">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Especifica la variable que contiene el recuento de filas."
+                  name="VariableName">User::Modificar</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\Ventas\Recuento de filas Mod.Inputs[Entrada de Recuento de filas 1]"
+                  hasSideEffects="true"
+                  name="Entrada de Recuento de filas 1">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Ventas\Recuento de filas Mod.Outputs[Salida de Recuento de filas 1]"
+                  name="Salida de Recuento de filas 1"
+                  synchronousInputId="Package\Ventas\Recuento de filas Mod.Inputs[Entrada de Recuento de filas 1]">
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Ventas.Paths[Nueva salida]"
+              endId="Package\Ventas\Recuento de filas Ing.Inputs[Entrada de Recuento de filas 1]"
+              name="Nueva salida"
+              startId="Package\Ventas\Dimensión de variación lenta.Outputs[Nueva salida]" />
+            <path
+              refId="Package\Ventas.Paths[Salida de actualizaciones de atributos variables]"
+              endId="Package\Ventas\Recuento de filas Mod.Inputs[Entrada de Recuento de filas 1]"
+              name="Salida de actualizaciones de atributos variables"
+              startId="Package\Ventas\Dimensión de variación lenta.Outputs[Salida de actualizaciones de atributos variables]" />
+            <path
+              refId="Package\Ventas.Paths[Salida de conversión de datos]"
+              endId="Package\Ventas\Dimensión de variación lenta.Inputs[Entrada de dimensión de variación lenta]"
+              name="Salida de conversión de datos"
+              startId="Package\Ventas\Conversión de datos.Outputs[Salida de conversión de datos]" />
+            <path
+              refId="Package\Ventas.Paths[Salida de origen de OLE DB]"
+              endId="Package\Ventas\Conversión de datos.Inputs[Entrada de conversión de datos]"
+              name="Salida de origen de OLE DB"
+              startId="Package\Ventas\Origen de NORTHWNDINNERJOIN.Outputs[Salida de origen de OLE DB]" />
+            <path
+              refId="Package\Ventas.Paths[Salida de Recuento de filas 1]"
+              endId="Package\Ventas\Comando de OLE DB.Inputs[Entrada de comando de OLE DB]"
+              name="Salida de Recuento de filas 1"
+              startId="Package\Ventas\Recuento de filas Mod.Outputs[Salida de Recuento de filas 1]" />
+            <path
+              refId="Package\Ventas.Paths[Salida de Recuento de filas 11]"
+              endId="Package\Ventas\Insertar destino.Inputs[Entrada de destino de OLE DB]"
+              name="Salida de Recuento de filas 1"
+              startId="Package\Ventas\Recuento de filas Ing.Outputs[Salida de Recuento de filas 1]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Restricción]"
+      DTS:CreationName=""
+      DTS:DTSID="{CD972AAB-7972-4C7B-B7A9-6AB00B4BFDC5}"
+      DTS:From="Package\Ventas"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Restricción"
+      DTS:To="Package\Logs Ventas" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--Esta sección CDATA contiene la información de diseño del paquete. Esta sección incluye información como, por ejemplo, las coordenadas (x,y), el ancho y el alto.-->
+<!--Si edita manualmente esta sección y comete un error, puede eliminarlo. -->
+<!--El paquete podrá cargarse normalmente, pero se perderá la información de diseño anterior y el diseñador reorganizará los elementos automáticamente en la superficie de diseño.-->
+<Objects
+  Version="8">
+  <!--Cada uno de los nodos siguientes contiene propiedades que no afectan al comportamiento en tiempo de ejecución.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="136,41.6"
+          Id="Package\Logs Ventas"
+          TopLeft="236.666653735771,178.533332091835" />
+        <NodeLayout
+          Size="110.4,41.6"
+          Id="Package\Ventas"
+          TopLeft="306.666649911139,103.133332616157" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Restricción]"
+          TopLeft="361.866649911139,144.733332616157">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-57.1999961753683,33.7999994756778"
+              Start="0,0"
+              End="-57.1999961753683,26.2999994756778">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,12.8999997378389" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,12.8999997378389"
+                    Point2="0,16.8999997378389"
+                    Point3="-4,16.8999997378389" />
+                  <mssgle:LineSegment
+                    End="-53.1999961753683,16.8999997378389" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-53.1999961753683,16.8999997378389"
+                    Point2="-57.1999961753683,16.8999997378389"
+                    Point3="-57.1999961753683,20.8999997378389" />
+                  <mssgle:LineSegment
+                    End="-57.1999961753683,26.2999994756778" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Ventas">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="244.8,41.6"
+          Id="Package\Ventas\Origen de NORTHWNDINNERJOIN"
+          TopLeft="661.9,5.49999999999995" />
+        <NodeLayout
+          Size="176,41.6"
+          Id="Package\Ventas\Recuento de filas Ing"
+          TopLeft="473.966654282147,325.03333323088" />
+        <NodeLayout
+          Size="181.6,41.6"
+          Id="Package\Ventas\Recuento de filas Mod"
+          TopLeft="802.166623138721,306.83333335744" />
+        <NodeLayout
+          Size="173.6,41.6"
+          Id="Package\Ventas\Conversión de datos"
+          TopLeft="697.5,107.1" />
+        <NodeLayout
+          Size="150.4,41.6"
+          Id="Package\Ventas\Insertar destino"
+          TopLeft="404.100004371007,460.233332290716" />
+        <NodeLayout
+          Size="212,41.6"
+          Id="Package\Ventas\Dimensión de variación lenta"
+          TopLeft="678.3,208.7" />
+        <NodeLayout
+          Size="178.4,41.6"
+          Id="Package\Ventas\Comando de OLE DB"
+          TopLeft="885.93332290666,424.699999204477" />
+        <EdgeLayout
+          Id="Package\Ventas.Paths[Salida de origen de OLE DB]"
+          TopLeft="784.3,47.1">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Ventas.Paths[Salida de conversión de datos]"
+          TopLeft="784.3,148.7">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Ventas.Paths[Salida de actualizaciones de atributos variables]"
+          TopLeft="784.3,250.3">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="108.666623138721,56.5333333574402"
+              Start="0,0"
+              End="108.666623138721,49.0333333574402">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,24.2666666787201" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,24.2666666787201"
+                    Point2="0,28.2666666787201"
+                    Point3="4,28.2666666787201" />
+                  <mssgle:LineSegment
+                    End="104.666623138721,28.2666666787201" />
+                  <mssgle:CubicBezierSegment
+                    Point1="104.666623138721,28.2666666787201"
+                    Point2="108.666623138721,28.2666666787201"
+                    Point3="108.666623138721,32.2666666787201" />
+                  <mssgle:LineSegment
+                    End="108.666623138721,49.0333333574402" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-49.9199306181396,33.2666666787201,208.506484375,9.7490234375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Ventas.Paths[Nueva salida]"
+          TopLeft="750.3,250.3">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-188.333345717853,74.7333332308796"
+              Start="0,0"
+              End="-188.333345717853,67.2333332308796">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,26.2292134417041" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,26.2292134417041"
+                    Point2="0,30.2292134417041"
+                    Point3="-4,30.2292134417041" />
+                  <mssgle:LineSegment
+                    End="-184.333345717853,30.2292134417041" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-184.333345717853,30.2292134417041"
+                    Point2="-188.333345717853,30.2292134417041"
+                    Point3="-188.333345717853,34.2292134417041" />
+                  <mssgle:LineSegment
+                    End="-188.333345717853,67.2333332308796" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-122.455032233927,35.2292134417041,56.57671875,9.7490234375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Ventas.Paths[Salida de Recuento de filas 11]"
+          TopLeft="561.966654282147,366.63333323088">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-82.6666499111396,93.5999990598361"
+              Start="0,0"
+              End="-82.6666499111396,86.0999990598361">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,42.7999995299181" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,42.7999995299181"
+                    Point2="0,46.7999995299181"
+                    Point3="-4,46.7999995299181" />
+                  <mssgle:LineSegment
+                    End="-78.6666499111396,46.7999995299181" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-78.6666499111396,46.7999995299181"
+                    Point2="-82.6666499111396,46.7999995299181"
+                    Point3="-82.6666499111396,50.7999995299181" />
+                  <mssgle:LineSegment
+                    End="-82.6666499111396,86.0999990598361" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Ventas.Paths[Salida de Recuento de filas 1]"
+          TopLeft="892.966623138721,348.43333335744">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="82.1666997679391,76.2666658470365"
+              Start="0,0"
+              End="82.1666997679391,68.7666658470365">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,34.1333329235183" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,34.1333329235183"
+                    Point2="0,38.1333329235183"
+                    Point3="4,38.1333329235183" />
+                  <mssgle:LineSegment
+                    End="78.1666997679391,38.1333329235183" />
+                  <mssgle:CubicBezierSegment
+                    Point1="78.1666997679391,38.1333329235183"
+                    Point2="82.1666997679391,38.1333329235183"
+                    Point3="82.1666997679391,42.1333329235183" />
+                  <mssgle:LineSegment
+                    End="82.1666997679391,68.7666658470365" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Ventas\Origen de NORTHWNDINNERJOIN">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Ventas\Dimensión de variación lenta">
+    <Properties>
+      <Property>
+        <Name>SCDMetadata</Name>
+        <Value
+          type="q2:string">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;SCDWizardMetadata xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"&gt;
+  &lt;ConnectionID&gt;{8652EAF8-0BE5-4220-B46C-036431C6087C}&lt;/ConnectionID&gt;
+  &lt;TableName&gt;[dbo].[StageVentas]&lt;/TableName&gt;
+  &lt;InputToColumnsCollection&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;Conversión de datos.Salidas[Salida de conversión de datos].Columnas[Copy of CustomerID]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;Cliente_Codigo&lt;/ColumnName&gt;
+      &lt;KeyType&gt;BusinessKey&lt;/KeyType&gt;
+      &lt;ChangeType&gt;None&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;Origen de NORTHWNDINNERJOIN.Salidas[Salida de origen de OLE DB].Columnas[EmployeeID]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;Empleado_Codigo&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;ChangingAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;Conversión de datos.Salidas[Salida de conversión de datos].Columnas[Copy of ProductID]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;Producto_Codigo&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;ChangingAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;Conversión de datos.Salidas[Salida de conversión de datos].Columnas[Copy of SupplierID]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;Proveedor_Codigo&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;ChangingAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;Conversión de datos.Salidas[Salida de conversión de datos].Columnas[Copy of Discount]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;Ventas_Descuento&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;ChangingAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;Conversión de datos.Salidas[Salida de conversión de datos].Columnas[Copy of Monto]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;Ventas_Monto&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;ChangingAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;Origen de NORTHWNDINNERJOIN.Salidas[Salida de origen de OLE DB].Columnas[OrderID]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;Ventas_NOrden&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;ChangingAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;Origen de NORTHWNDINNERJOIN.Salidas[Salida de origen de OLE DB].Columnas[OrderDate]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;Ventas_OrderDate&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;ChangingAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;Conversión de datos.Salidas[Salida de conversión de datos].Columnas[Copy of UnitPrice]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;Ventas_PUnitario&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;ChangingAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;Conversión de datos.Salidas[Salida de conversión de datos].Columnas[Copy of UnitsInStock]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;Ventas_Unidades&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;ChangingAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+  &lt;/InputToColumnsCollection&gt;
+  &lt;GeneratedComponentsIdentificationStrings&gt;
+    &lt;anyType xsi:type="xsd:string"&gt;Insertar destino&lt;/anyType&gt;
+    &lt;anyType xsi:type="xsd:string"&gt;Comando de OLE DB&lt;/anyType&gt;
+  &lt;/GeneratedComponentsIdentificationStrings&gt;
+  &lt;FailFixedAttribute&gt;false&lt;/FailFixedAttribute&gt;
+  &lt;FailChangeAttribute&gt;false&lt;/FailChangeAttribute&gt;
+  &lt;UseStartEndDate&gt;false&lt;/UseStartEndDate&gt;
+  &lt;CurrentIndicatorColumn /&gt;
+  &lt;InferredIndicatorColumn /&gt;
+  &lt;ValueCurrent /&gt;
+  &lt;ValueExpired /&gt;
+  &lt;StartDateColumn /&gt;
+  &lt;EndDateColumn /&gt;
+  &lt;DateVariable /&gt;
+  &lt;EnableInferredSupport&gt;false&lt;/EnableInferredSupport&gt;
+&lt;/SCDWizardMetadata&gt;</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

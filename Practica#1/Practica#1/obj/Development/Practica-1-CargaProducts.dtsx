@@ -1,0 +1,1728 @@
+<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="10/24/2024 12:15:16 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="ASUS-TUF-GAMING"
+  DTS:CreatorName="ASUS-TUF-GAMING\Pablo Rodriguez"
+  DTS:DTSID="{2BCFCBEC-763A-4E94-B26A-035FA47D7817}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="16.0.5556.0"
+  DTS:LocaleID="2058"
+  DTS:ObjectName="Practica-1-CargaProducts"
+  DTS:PackageType="5"
+  DTS:VersionBuild="70"
+  DTS:VersionGUID="{1CBD6F50-196E-479F-8997-D62351110C8B}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[.,1450.NorthwindLogs.sa]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{532FF346-34E4-4E03-AB2F-489D5A47F1F2}"
+      DTS:ObjectName=".,1450.NorthwindLogs.sa">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=.,1450;User ID=sa;Initial Catalog=NorthwindLogs;Provider=MSOLEDBSQL.1;Persist Security Info=True;Initial File Name=;Server SPN=;Authentication=;Access Token=;Application Name=SSIS-Practica-1-CargaFull-Delta-{532FF346-34E4-4E03-AB2F-489D5A47F1F2}.,1450.NorthwindLogs.sa;Auto Translate=False;">
+          <DTS:Password
+            DTS:Name="Password"
+            Sensitive="1"
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAXAD7/w7AQkOcsbYvEc8Q+AAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAAreI77nQgrtRzOZV/BUniYqGDqD0LLrMWrQ+Z25LsI6gAAAAAOgAAAAAIAACAAAAAt6z8jjHQ9VD55fVm8QvGo9rgCJTPJpgmH7+GoFCinWCAAAABRArELSdFjInnHv3DHgoIXwYOO3pMPSdC0tNc1qvKuAUAAAADmqvpi3WaA8H1wKQPLRqHar5v+K66dN1zl+Flc4TjiNXVX6GYotfz/TpixpuJ3RNjp19bcVgcMZ5w9eN82chpY</DTS:Password>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[.,1450.NorthwindLogs.sa 1]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{E1ED3CFD-72AA-42A3-AA55-E0622D424CEF}"
+      DTS:ObjectName=".,1450.NorthwindLogs.sa 1">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=.,1450;User ID=sa;Initial Catalog=NorthwindLogs;Provider=MSOLEDBSQL.1;Persist Security Info=True;Initial File Name=;Server SPN=;Authentication=;Access Token=;Application Name=SSIS-Practica-1-CargaFull-Delta-{E1ED3CFD-72AA-42A3-AA55-E0622D424CEF}.,1450.NorthwindLogs.sa 1;Auto Translate=False;">
+          <DTS:Password
+            DTS:Name="Password"
+            Sensitive="1"
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAXAD7/w7AQkOcsbYvEc8Q+AAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAAXOCcG7RvCESaA2ekRuzjypch5LKVdx9GkBk2R6UIJcwAAAAAOgAAAAAIAACAAAABknxdITFmbCebK02q7YCa5qUI5fuLRHqpdI7u1HGET+SAAAABOB1Vqn/Ofpwcep1EGEWiuZl7pMmeDzFXt3Mz10dSA70AAAAD84MyExfUOkVE+egTvpSnQVHUvQEwM5Ot6zEc3vFP7onEN90HRxhNQBv3sfln4gCGNuGcBfz1ZqxKLg+NiCBud</DTS:Password>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[.,1450.NORTHWND.sa]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{8143B41B-7A93-4CEC-AC08-40AB1FB9EB9E}"
+      DTS:ObjectName=".,1450.NORTHWND.sa">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=.,1450;User ID=sa;Initial Catalog=NORTHWND;Provider=MSOLEDBSQL.1;Persist Security Info=True;Initial File Name=;Server SPN=;Authentication=;Access Token=;Application Name=SSIS-Package-{8143B41B-7A93-4CEC-AC08-40AB1FB9EB9E}.,1450.NORTHWND.sa;Auto Translate=False;">
+          <DTS:Password
+            DTS:Name="Password"
+            Sensitive="1"
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAXAD7/w7AQkOcsbYvEc8Q+AAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAACGBSj3x9tGfUdMD2tZguvxk8YU3NL1+I3Ozt95zesjywAAAAAOgAAAAAIAACAAAADrCPWleLbpNzg0NGsGPlSL5iOSplXYsgHFHJyVQjo9LiAAAABDOV+QRc53b6MZW8X1KurPxdETEVMQteAjDub5rDxETkAAAAAPWE1xAzWAwAqU6vYnjEnux5CB8mnCJUMLt6pzN3SpO6chRpZuhIhzGdEIEc2MjyRh6pr4v602cBwei44aipS/</DTS:Password>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[.,1450.stageNorthwind.sa]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{AA5657D6-7CB0-45BF-B463-DD2B40D5337D}"
+      DTS:ObjectName=".,1450.stageNorthwind.sa">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=.,1450;User ID=sa;Initial Catalog=stageNorthwind;Provider=MSOLEDBSQL.1;Persist Security Info=True;Initial File Name=;Server SPN=;Authentication=;Access Token=;Application Name=SSIS-Package-{AA5657D6-7CB0-45BF-B463-DD2B40D5337D}.,1450.stageNorthwind.sa;Auto Translate=False;">
+          <DTS:Password
+            DTS:Name="Password"
+            Sensitive="1"
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAXAD7/w7AQkOcsbYvEc8Q+AAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAACHfcwpzaywvYa+c0b1mTnufL7H/u+b1fD2IQIha+pi4QAAAAAOgAAAAAIAACAAAAA2IhB8yxiTURiqhg5ViaEprz7aap6vwlyQqQDXPZBYPyAAAAAbNzd/AyEhkYlfXWOp8tK9bpLjkO8kj/8kYOhjFWW/JUAAAADSfXfCGcEthgDGoWupt6clwNyYW1tFP+TLXBAm/On+wWAJvjjRu7DFoYp2px2ZY4Q2KoNqDW+/i1iLrzvnl/a6</DTS:Password>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{380A55A4-57D6-412E-B21C-45B9C7C6B5EA}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="Agregar">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{00A9D256-BD26-450F-A367-5570571F8AD3}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="Modificar">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+  </DTS:Variables>
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Carga Full y Delta Products"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Tarea Flujo de datos"
+      DTS:DTSID="{3EDB3A34-E09D-49AA-979D-900CBCBB15AD}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Carga Full y Delta Products"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Carga Full y Delta Products\Agrega Filas"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="Destino de OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;4"
+              description="Destino de OLE DB"
+              name="Agrega Filas"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Número de segundos antes de que se agote el tiempo de espera de un comando. Un valor de 0 indica un tiempo de espera infinito."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica el nombre del objeto de base de datos usado para abrir un conjunto de filas."
+                  name="OpenRowset">[dbo].[StageProducts]</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica la variable que contiene el nombre del objeto de base de datos usado para abrir un conjunto de filas."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="Comando SQL para ejecutar."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica la página de códigos de columna para utilizar cuando la información de página de códigos no está disponible en el origen de datos."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Fuerza el uso del valor de la propiedad DefaultCodePage al describir datos de caracteres."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica el modo utilizado para obtener acceso a la base de datos."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indica si los valores proporcionados para columnas de identidad se van a copiar al destino. Si es False, los valores de las columnas de identidad se generan automáticamente en el destino. Solo se aplica si está activada la carga rápida."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indica si las columnas que contienen NULL tendrán NULL insertado en el destino. Si es False, las columnas que contienen NULL tendrán sus valores predeterminados insertados en el destino. Solo se aplica si está activada la carga rápida."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica opciones para usar con la carga rápida. Solo se aplica si está activada la carga rápida."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica cuándo se emiten confirmaciones durante la inserción de datos. El valor 0 especifica que se emitirá una confirmación al final de la inserción de datos. Solo se aplica si está activada la carga rápida."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Carga Full y Delta Products\Agrega Filas.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[.,1450.stageNorthwind.sa]"
+                  connectionManagerRefId="Package.ConnectionManagers[.,1450.stageNorthwind.sa]"
+                  description="La conexión de tiempo de ejecución OLE DB usada para obtener acceso a la base de datos."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Carga Full y Delta Products\Agrega Filas.Inputs[Entrada de destino de OLE DB]"
+                  errorOrTruncationOperation="Insertar"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="Entrada de destino de OLE DB">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Carga Full y Delta Products\Agrega Filas.Inputs[Entrada de destino de OLE DB].Columns[ProductName]"
+                      cachedDataType="wstr"
+                      cachedLength="40"
+                      cachedName="ProductName"
+                      externalMetadataColumnId="Package\Carga Full y Delta Products\Agrega Filas.Inputs[Entrada de destino de OLE DB].ExternalColumns[ProductName]"
+                      lineageId="Package\Carga Full y Delta Products\Origen de NORTHWND PRODUCTS.Outputs[Salida de origen de OLE DB].Columns[ProductName]" />
+                    <inputColumn
+                      refId="Package\Carga Full y Delta Products\Agrega Filas.Inputs[Entrada de destino de OLE DB].Columns[SupplierID]"
+                      cachedDataType="i4"
+                      cachedName="SupplierID"
+                      externalMetadataColumnId="Package\Carga Full y Delta Products\Agrega Filas.Inputs[Entrada de destino de OLE DB].ExternalColumns[SupplierID]"
+                      lineageId="Package\Carga Full y Delta Products\Origen de NORTHWND PRODUCTS.Outputs[Salida de origen de OLE DB].Columns[SupplierID]" />
+                    <inputColumn
+                      refId="Package\Carga Full y Delta Products\Agrega Filas.Inputs[Entrada de destino de OLE DB].Columns[CategoryID]"
+                      cachedDataType="i4"
+                      cachedName="CategoryID"
+                      externalMetadataColumnId="Package\Carga Full y Delta Products\Agrega Filas.Inputs[Entrada de destino de OLE DB].ExternalColumns[CategoryID]"
+                      lineageId="Package\Carga Full y Delta Products\Origen de NORTHWND PRODUCTS.Outputs[Salida de origen de OLE DB].Columns[CategoryID]" />
+                    <inputColumn
+                      refId="Package\Carga Full y Delta Products\Agrega Filas.Inputs[Entrada de destino de OLE DB].Columns[QuantityPerUnit]"
+                      cachedDataType="wstr"
+                      cachedLength="20"
+                      cachedName="QuantityPerUnit"
+                      externalMetadataColumnId="Package\Carga Full y Delta Products\Agrega Filas.Inputs[Entrada de destino de OLE DB].ExternalColumns[QuantityPerUnit]"
+                      lineageId="Package\Carga Full y Delta Products\Origen de NORTHWND PRODUCTS.Outputs[Salida de origen de OLE DB].Columns[QuantityPerUnit]" />
+                    <inputColumn
+                      refId="Package\Carga Full y Delta Products\Agrega Filas.Inputs[Entrada de destino de OLE DB].Columns[UnitPrice]"
+                      cachedDataType="cy"
+                      cachedName="UnitPrice"
+                      externalMetadataColumnId="Package\Carga Full y Delta Products\Agrega Filas.Inputs[Entrada de destino de OLE DB].ExternalColumns[UnitPrice]"
+                      lineageId="Package\Carga Full y Delta Products\Origen de NORTHWND PRODUCTS.Outputs[Salida de origen de OLE DB].Columns[UnitPrice]" />
+                    <inputColumn
+                      refId="Package\Carga Full y Delta Products\Agrega Filas.Inputs[Entrada de destino de OLE DB].Columns[UnitsInStock]"
+                      cachedDataType="i2"
+                      cachedName="UnitsInStock"
+                      externalMetadataColumnId="Package\Carga Full y Delta Products\Agrega Filas.Inputs[Entrada de destino de OLE DB].ExternalColumns[UnitsInStock]"
+                      lineageId="Package\Carga Full y Delta Products\Origen de NORTHWND PRODUCTS.Outputs[Salida de origen de OLE DB].Columns[UnitsInStock]" />
+                    <inputColumn
+                      refId="Package\Carga Full y Delta Products\Agrega Filas.Inputs[Entrada de destino de OLE DB].Columns[UnitsOnOrder]"
+                      cachedDataType="i2"
+                      cachedName="UnitsOnOrder"
+                      externalMetadataColumnId="Package\Carga Full y Delta Products\Agrega Filas.Inputs[Entrada de destino de OLE DB].ExternalColumns[UnitsOnOrder]"
+                      lineageId="Package\Carga Full y Delta Products\Origen de NORTHWND PRODUCTS.Outputs[Salida de origen de OLE DB].Columns[UnitsOnOrder]" />
+                    <inputColumn
+                      refId="Package\Carga Full y Delta Products\Agrega Filas.Inputs[Entrada de destino de OLE DB].Columns[ReorderLevel]"
+                      cachedDataType="i2"
+                      cachedName="ReorderLevel"
+                      externalMetadataColumnId="Package\Carga Full y Delta Products\Agrega Filas.Inputs[Entrada de destino de OLE DB].ExternalColumns[ReorderLevel]"
+                      lineageId="Package\Carga Full y Delta Products\Origen de NORTHWND PRODUCTS.Outputs[Salida de origen de OLE DB].Columns[ReorderLevel]" />
+                    <inputColumn
+                      refId="Package\Carga Full y Delta Products\Agrega Filas.Inputs[Entrada de destino de OLE DB].Columns[Discontinued]"
+                      cachedDataType="bool"
+                      cachedName="Discontinued"
+                      externalMetadataColumnId="Package\Carga Full y Delta Products\Agrega Filas.Inputs[Entrada de destino de OLE DB].ExternalColumns[Discontinued]"
+                      lineageId="Package\Carga Full y Delta Products\Origen de NORTHWND PRODUCTS.Outputs[Salida de origen de OLE DB].Columns[Discontinued]" />
+                    <inputColumn
+                      refId="Package\Carga Full y Delta Products\Agrega Filas.Inputs[Entrada de destino de OLE DB].Columns[ProductID]"
+                      cachedDataType="i4"
+                      cachedName="ProductID"
+                      externalMetadataColumnId="Package\Carga Full y Delta Products\Agrega Filas.Inputs[Entrada de destino de OLE DB].ExternalColumns[ProductID]"
+                      lineageId="Package\Carga Full y Delta Products\Origen de NORTHWND PRODUCTS.Outputs[Salida de origen de OLE DB].Columns[ProductID]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Carga Full y Delta Products\Agrega Filas.Inputs[Entrada de destino de OLE DB].ExternalColumns[ProductID]"
+                      dataType="i4"
+                      name="ProductID" />
+                    <externalMetadataColumn
+                      refId="Package\Carga Full y Delta Products\Agrega Filas.Inputs[Entrada de destino de OLE DB].ExternalColumns[ProductName]"
+                      dataType="wstr"
+                      length="40"
+                      name="ProductName" />
+                    <externalMetadataColumn
+                      refId="Package\Carga Full y Delta Products\Agrega Filas.Inputs[Entrada de destino de OLE DB].ExternalColumns[SupplierID]"
+                      dataType="i4"
+                      name="SupplierID" />
+                    <externalMetadataColumn
+                      refId="Package\Carga Full y Delta Products\Agrega Filas.Inputs[Entrada de destino de OLE DB].ExternalColumns[CategoryID]"
+                      dataType="i4"
+                      name="CategoryID" />
+                    <externalMetadataColumn
+                      refId="Package\Carga Full y Delta Products\Agrega Filas.Inputs[Entrada de destino de OLE DB].ExternalColumns[QuantityPerUnit]"
+                      dataType="wstr"
+                      length="20"
+                      name="QuantityPerUnit" />
+                    <externalMetadataColumn
+                      refId="Package\Carga Full y Delta Products\Agrega Filas.Inputs[Entrada de destino de OLE DB].ExternalColumns[UnitPrice]"
+                      dataType="cy"
+                      name="UnitPrice" />
+                    <externalMetadataColumn
+                      refId="Package\Carga Full y Delta Products\Agrega Filas.Inputs[Entrada de destino de OLE DB].ExternalColumns[UnitsInStock]"
+                      dataType="i2"
+                      name="UnitsInStock" />
+                    <externalMetadataColumn
+                      refId="Package\Carga Full y Delta Products\Agrega Filas.Inputs[Entrada de destino de OLE DB].ExternalColumns[UnitsOnOrder]"
+                      dataType="i2"
+                      name="UnitsOnOrder" />
+                    <externalMetadataColumn
+                      refId="Package\Carga Full y Delta Products\Agrega Filas.Inputs[Entrada de destino de OLE DB].ExternalColumns[ReorderLevel]"
+                      dataType="i2"
+                      name="ReorderLevel" />
+                    <externalMetadataColumn
+                      refId="Package\Carga Full y Delta Products\Agrega Filas.Inputs[Entrada de destino de OLE DB].ExternalColumns[Discontinued]"
+                      dataType="bool"
+                      name="Discontinued" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Carga Full y Delta Products\Agrega Filas.Outputs[Salida de error de destino de OLE DB]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Salida de error de destino de OLE DB"
+                  synchronousInputId="Package\Carga Full y Delta Products\Agrega Filas.Inputs[Entrada de destino de OLE DB]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Carga Full y Delta Products\Agrega Filas.Outputs[Salida de error de destino de OLE DB].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Carga Full y Delta Products\Agrega Filas.Outputs[Salida de error de destino de OLE DB].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Carga Full y Delta Products\Agrega Filas.Outputs[Salida de error de destino de OLE DB].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Carga Full y Delta Products\Agrega Filas.Outputs[Salida de error de destino de OLE DB].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Carga Full y Delta Products\Búsqueda"
+              componentClassID="Microsoft.Lookup"
+              contactInfo="Búsqueda;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;6"
+              description="Combina columnas adicionales con el flujo de datos mediante la búsqueda de valores en una tabla. Por ejemplo, se combina la columna 'id. de empleado' con la tabla de empleados para obtener la 'fecha de contratación' y 'el nombre de empleado'. Se recomienda esta transformación cuando hay suficiente espacio en memoria para la tabla de búsqueda."
+              name="Búsqueda"
+              usesDispositions="true"
+              version="6">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Especifica la instrucción SQL que genera la tabla de búsqueda."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from [dbo].[StageProducts]</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica una instrucción SQL que usa parámetros para generar la tabla de búsqueda."
+                  expressionType="Notify"
+                  name="SqlCommandParam"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select * from [dbo].[StageProducts]) [refTable]
+where [refTable].[ProductID] = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica el tipo de conexión utilizado para tener acceso al conjunto de datos de referencia."
+                  name="ConnectionType"
+                  typeConverter="LookupConnectionType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica el tipo de caché de la tabla de búsqueda."
+                  name="CacheType"
+                  typeConverter="CacheType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica cómo la transformación de búsquedas trata las filas sin entradas coincidentes en el conjunto de datos de referencia."
+                  name="NoMatchBehavior"
+                  typeConverter="LookupNoMatchBehavior">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica el porcentaje de la caché asignado a las filas sin entradas coincidentes en el conjunto de datos de referencia."
+                  name="NoMatchCachePercentage">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Uso de memoria máximo para la caché de referencia en una plataforma de 32 bits."
+                  name="MaxMemoryUsage">25</property>
+                <property
+                  dataType="System.Int64"
+                  description="Uso de memoria máximo para la caché de referencia en una plataforma de 64 bits."
+                  name="MaxMemoryUsage64">25</property>
+                <property
+                  dataType="System.String"
+                  description="Indica si se debe hacer referencia a metadatos en formato XML."
+                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="ProductID" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="ProductName" dataType="DT_WSTR" length="40" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="SupplierID" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="CategoryID" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="QuantityPerUnit" dataType="DT_WSTR" length="20" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="UnitPrice" dataType="DT_CY" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="UnitsInStock" dataType="DT_I2" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="UnitsOnOrder" dataType="DT_I2" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="ReorderLevel" dataType="DT_I2" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Discontinued" dataType="DT_BOOL" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                <property
+                  containsID="true"
+                  dataType="System.String"
+                  description="Especifica la lista de identificadores de linaje que están asignados a los parámetros que usa la instrucción SQL de la propiedad SQLCommand. Las entradas de la lista están separadas por puntos y comas."
+                  name="ParameterMap">#{Package\Carga Full y Delta Products\Origen de NORTHWND PRODUCTS.Outputs[Salida de origen de OLE DB].Columns[ProductID]};</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica la página de códigos de columna para utilizar cuando la información de página de códigos no está disponible en el origen de datos."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Determina si las claves duplicadas de los datos de referencia se deben tratar como errores cuando se usa el modo de caché."
+                  name="TreatDuplicateKeysAsError">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Carga Full y Delta Products\Búsqueda.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[.,1450.stageNorthwind.sa]"
+                  connectionManagerRefId="Package.ConnectionManagers[.,1450.stageNorthwind.sa]"
+                  description="Administrador de conexiones utilizado para obtener acceso a los datos de búsqueda."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Carga Full y Delta Products\Búsqueda.Inputs[Entrada de búsqueda]"
+                  name="Entrada de búsqueda">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Carga Full y Delta Products\Búsqueda.Inputs[Entrada de búsqueda].Columns[ProductID]"
+                      cachedDataType="i4"
+                      cachedName="ProductID"
+                      lineageId="Package\Carga Full y Delta Products\Origen de NORTHWND PRODUCTS.Outputs[Salida de origen de OLE DB].Columns[ProductID]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Especifica la columna de la tabla de referencia con la que se combina una columna."
+                          name="JoinToReferenceColumn">ProductID</property>
+                        <property
+                          dataType="System.Null"
+                          description="Especifica la columna de la tabla de referencia de la que se copia una columna."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Carga Full y Delta Products\Búsqueda.Outputs[Salida de entradas coincidentes de búsqueda]"
+                  errorOrTruncationOperation="Búsqueda"
+                  errorRowDisposition="IgnoreFailure"
+                  exclusionGroup="1"
+                  name="Salida de entradas coincidentes de búsqueda"
+                  synchronousInputId="Package\Carga Full y Delta Products\Búsqueda.Inputs[Entrada de búsqueda]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Carga Full y Delta Products\Búsqueda.Outputs[Salida de entradas coincidentes de búsqueda].Columns[ProductID]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Copiar columna"
+                      lineageId="Package\Carga Full y Delta Products\Búsqueda.Outputs[Salida de entradas coincidentes de búsqueda].Columns[ProductID]"
+                      name="ProductID"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Especifica la columna de la tabla de referencia de la que se copia una columna."
+                          name="CopyFromReferenceColumn">ProductID</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Carga Full y Delta Products\Búsqueda.Outputs[Salida de entradas coincidentes de búsqueda].Columns[ProductName]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Copiar columna"
+                      length="40"
+                      lineageId="Package\Carga Full y Delta Products\Búsqueda.Outputs[Salida de entradas coincidentes de búsqueda].Columns[ProductName]"
+                      name="ProductName"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Especifica la columna de la tabla de referencia de la que se copia una columna."
+                          name="CopyFromReferenceColumn">ProductName</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Carga Full y Delta Products\Búsqueda.Outputs[Salida de entradas coincidentes de búsqueda].Columns[SupplierID]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Copiar columna"
+                      lineageId="Package\Carga Full y Delta Products\Búsqueda.Outputs[Salida de entradas coincidentes de búsqueda].Columns[SupplierID]"
+                      name="SupplierID"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Especifica la columna de la tabla de referencia de la que se copia una columna."
+                          name="CopyFromReferenceColumn">SupplierID</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Carga Full y Delta Products\Búsqueda.Outputs[Salida de entradas coincidentes de búsqueda].Columns[CategoryID]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Copiar columna"
+                      lineageId="Package\Carga Full y Delta Products\Búsqueda.Outputs[Salida de entradas coincidentes de búsqueda].Columns[CategoryID]"
+                      name="CategoryID"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Especifica la columna de la tabla de referencia de la que se copia una columna."
+                          name="CopyFromReferenceColumn">CategoryID</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Carga Full y Delta Products\Búsqueda.Outputs[Salida de entradas coincidentes de búsqueda].Columns[QuantityPerUnit]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Copiar columna"
+                      length="20"
+                      lineageId="Package\Carga Full y Delta Products\Búsqueda.Outputs[Salida de entradas coincidentes de búsqueda].Columns[QuantityPerUnit]"
+                      name="QuantityPerUnit"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Especifica la columna de la tabla de referencia de la que se copia una columna."
+                          name="CopyFromReferenceColumn">QuantityPerUnit</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Carga Full y Delta Products\Búsqueda.Outputs[Salida de entradas coincidentes de búsqueda].Columns[UnitPrice]"
+                      dataType="cy"
+                      errorOrTruncationOperation="Copiar columna"
+                      lineageId="Package\Carga Full y Delta Products\Búsqueda.Outputs[Salida de entradas coincidentes de búsqueda].Columns[UnitPrice]"
+                      name="UnitPrice"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Especifica la columna de la tabla de referencia de la que se copia una columna."
+                          name="CopyFromReferenceColumn">UnitPrice</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Carga Full y Delta Products\Búsqueda.Outputs[Salida de entradas coincidentes de búsqueda].Columns[UnitsInStock]"
+                      dataType="i2"
+                      errorOrTruncationOperation="Copiar columna"
+                      lineageId="Package\Carga Full y Delta Products\Búsqueda.Outputs[Salida de entradas coincidentes de búsqueda].Columns[UnitsInStock]"
+                      name="UnitsInStock"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Especifica la columna de la tabla de referencia de la que se copia una columna."
+                          name="CopyFromReferenceColumn">UnitsInStock</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Carga Full y Delta Products\Búsqueda.Outputs[Salida de entradas coincidentes de búsqueda].Columns[UnitsOnOrder]"
+                      dataType="i2"
+                      errorOrTruncationOperation="Copiar columna"
+                      lineageId="Package\Carga Full y Delta Products\Búsqueda.Outputs[Salida de entradas coincidentes de búsqueda].Columns[UnitsOnOrder]"
+                      name="UnitsOnOrder"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Especifica la columna de la tabla de referencia de la que se copia una columna."
+                          name="CopyFromReferenceColumn">UnitsOnOrder</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Carga Full y Delta Products\Búsqueda.Outputs[Salida de entradas coincidentes de búsqueda].Columns[ReorderLevel]"
+                      dataType="i2"
+                      errorOrTruncationOperation="Copiar columna"
+                      lineageId="Package\Carga Full y Delta Products\Búsqueda.Outputs[Salida de entradas coincidentes de búsqueda].Columns[ReorderLevel]"
+                      name="ReorderLevel"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Especifica la columna de la tabla de referencia de la que se copia una columna."
+                          name="CopyFromReferenceColumn">ReorderLevel</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Carga Full y Delta Products\Búsqueda.Outputs[Salida de entradas coincidentes de búsqueda].Columns[Discontinued]"
+                      dataType="bool"
+                      errorOrTruncationOperation="Copiar columna"
+                      lineageId="Package\Carga Full y Delta Products\Búsqueda.Outputs[Salida de entradas coincidentes de búsqueda].Columns[Discontinued]"
+                      name="Discontinued"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Especifica la columna de la tabla de referencia de la que se copia una columna."
+                          name="CopyFromReferenceColumn">Discontinued</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Carga Full y Delta Products\Búsqueda.Outputs[Salida de entradas no coincidentes de búsqueda]"
+                  description="Salida de búsqueda que trata las filas sin entradas coincidentes en el conjunto de datos de referencia. Utilice esta salida cuando la propiedad NoMatchBehavior esté establecida en 'Enviar las filas sin entradas coincidentes a la salida de entradas no coincidentes'."
+                  exclusionGroup="1"
+                  name="Salida de entradas no coincidentes de búsqueda"
+                  synchronousInputId="Package\Carga Full y Delta Products\Búsqueda.Inputs[Entrada de búsqueda]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Carga Full y Delta Products\Búsqueda.Outputs[Salida de error de búsqueda]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Salida de error de búsqueda"
+                  synchronousInputId="Package\Carga Full y Delta Products\Búsqueda.Inputs[Entrada de búsqueda]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Carga Full y Delta Products\Búsqueda.Outputs[Salida de error de búsqueda].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Carga Full y Delta Products\Búsqueda.Outputs[Salida de error de búsqueda].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Carga Full y Delta Products\Búsqueda.Outputs[Salida de error de búsqueda].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Carga Full y Delta Products\Búsqueda.Outputs[Salida de error de búsqueda].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Carga Full y Delta Products\División condicional"
+              componentClassID="Microsoft.ConditionalSplit"
+              contactInfo="División condicional;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;0"
+              description="Enruta filas de datos a diferentes salidas según el contenido de los datos. Se usan condiciones (expresiones de SSIS) para especificar las filas que se van a enrutar. Por ejemplo, se usa para separar los registros que deben limpiarse de los registros listos para ser cargados o para enrutar solamente un subconjunto de registros."
+              name="División condicional"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Carga Full y Delta Products\División condicional.Inputs[Entrada de división condicional]"
+                  description="Entrada en la transformación División condicional"
+                  name="Entrada de división condicional">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Carga Full y Delta Products\División condicional.Inputs[Entrada de división condicional].Columns[ProductID]"
+                      cachedDataType="i4"
+                      cachedName="ProductID"
+                      lineageId="Package\Carga Full y Delta Products\Búsqueda.Outputs[Salida de entradas coincidentes de búsqueda].Columns[ProductID]" />
+                    <inputColumn
+                      refId="Package\Carga Full y Delta Products\División condicional.Inputs[Entrada de división condicional].Columns[ProductName]"
+                      cachedDataType="wstr"
+                      cachedLength="40"
+                      cachedName="ProductName"
+                      lineageId="Package\Carga Full y Delta Products\Origen de NORTHWND PRODUCTS.Outputs[Salida de origen de OLE DB].Columns[ProductName]" />
+                    <inputColumn
+                      refId="Package\Carga Full y Delta Products\División condicional.Inputs[Entrada de división condicional].Columns[ProductName1]"
+                      cachedDataType="wstr"
+                      cachedLength="40"
+                      cachedName="ProductName"
+                      lineageId="Package\Carga Full y Delta Products\Búsqueda.Outputs[Salida de entradas coincidentes de búsqueda].Columns[ProductName]" />
+                    <inputColumn
+                      refId="Package\Carga Full y Delta Products\División condicional.Inputs[Entrada de división condicional].Columns[ProductID1]"
+                      cachedDataType="i4"
+                      cachedName="ProductID"
+                      lineageId="Package\Carga Full y Delta Products\Origen de NORTHWND PRODUCTS.Outputs[Salida de origen de OLE DB].Columns[ProductID]" />
+                    <inputColumn
+                      refId="Package\Carga Full y Delta Products\División condicional.Inputs[Entrada de división condicional].Columns[SupplierID]"
+                      cachedDataType="i4"
+                      cachedName="SupplierID"
+                      lineageId="Package\Carga Full y Delta Products\Origen de NORTHWND PRODUCTS.Outputs[Salida de origen de OLE DB].Columns[SupplierID]" />
+                    <inputColumn
+                      refId="Package\Carga Full y Delta Products\División condicional.Inputs[Entrada de división condicional].Columns[CategoryID]"
+                      cachedDataType="i4"
+                      cachedName="CategoryID"
+                      lineageId="Package\Carga Full y Delta Products\Origen de NORTHWND PRODUCTS.Outputs[Salida de origen de OLE DB].Columns[CategoryID]" />
+                    <inputColumn
+                      refId="Package\Carga Full y Delta Products\División condicional.Inputs[Entrada de división condicional].Columns[QuantityPerUnit]"
+                      cachedDataType="wstr"
+                      cachedLength="20"
+                      cachedName="QuantityPerUnit"
+                      lineageId="Package\Carga Full y Delta Products\Origen de NORTHWND PRODUCTS.Outputs[Salida de origen de OLE DB].Columns[QuantityPerUnit]" />
+                    <inputColumn
+                      refId="Package\Carga Full y Delta Products\División condicional.Inputs[Entrada de división condicional].Columns[UnitPrice]"
+                      cachedDataType="cy"
+                      cachedName="UnitPrice"
+                      lineageId="Package\Carga Full y Delta Products\Origen de NORTHWND PRODUCTS.Outputs[Salida de origen de OLE DB].Columns[UnitPrice]" />
+                    <inputColumn
+                      refId="Package\Carga Full y Delta Products\División condicional.Inputs[Entrada de división condicional].Columns[UnitsInStock]"
+                      cachedDataType="i2"
+                      cachedName="UnitsInStock"
+                      lineageId="Package\Carga Full y Delta Products\Origen de NORTHWND PRODUCTS.Outputs[Salida de origen de OLE DB].Columns[UnitsInStock]" />
+                    <inputColumn
+                      refId="Package\Carga Full y Delta Products\División condicional.Inputs[Entrada de división condicional].Columns[UnitsOnOrder]"
+                      cachedDataType="i2"
+                      cachedName="UnitsOnOrder"
+                      lineageId="Package\Carga Full y Delta Products\Origen de NORTHWND PRODUCTS.Outputs[Salida de origen de OLE DB].Columns[UnitsOnOrder]" />
+                    <inputColumn
+                      refId="Package\Carga Full y Delta Products\División condicional.Inputs[Entrada de división condicional].Columns[ReorderLevel]"
+                      cachedDataType="i2"
+                      cachedName="ReorderLevel"
+                      lineageId="Package\Carga Full y Delta Products\Origen de NORTHWND PRODUCTS.Outputs[Salida de origen de OLE DB].Columns[ReorderLevel]" />
+                    <inputColumn
+                      refId="Package\Carga Full y Delta Products\División condicional.Inputs[Entrada de división condicional].Columns[Discontinued]"
+                      cachedDataType="bool"
+                      cachedName="Discontinued"
+                      lineageId="Package\Carga Full y Delta Products\Origen de NORTHWND PRODUCTS.Outputs[Salida de origen de OLE DB].Columns[Discontinued]" />
+                    <inputColumn
+                      refId="Package\Carga Full y Delta Products\División condicional.Inputs[Entrada de división condicional].Columns[SupplierID1]"
+                      cachedDataType="i4"
+                      cachedName="SupplierID"
+                      lineageId="Package\Carga Full y Delta Products\Búsqueda.Outputs[Salida de entradas coincidentes de búsqueda].Columns[SupplierID]" />
+                    <inputColumn
+                      refId="Package\Carga Full y Delta Products\División condicional.Inputs[Entrada de división condicional].Columns[CategoryID1]"
+                      cachedDataType="i4"
+                      cachedName="CategoryID"
+                      lineageId="Package\Carga Full y Delta Products\Búsqueda.Outputs[Salida de entradas coincidentes de búsqueda].Columns[CategoryID]" />
+                    <inputColumn
+                      refId="Package\Carga Full y Delta Products\División condicional.Inputs[Entrada de división condicional].Columns[QuantityPerUnit1]"
+                      cachedDataType="wstr"
+                      cachedLength="20"
+                      cachedName="QuantityPerUnit"
+                      lineageId="Package\Carga Full y Delta Products\Búsqueda.Outputs[Salida de entradas coincidentes de búsqueda].Columns[QuantityPerUnit]" />
+                    <inputColumn
+                      refId="Package\Carga Full y Delta Products\División condicional.Inputs[Entrada de división condicional].Columns[UnitPrice1]"
+                      cachedDataType="cy"
+                      cachedName="UnitPrice"
+                      lineageId="Package\Carga Full y Delta Products\Búsqueda.Outputs[Salida de entradas coincidentes de búsqueda].Columns[UnitPrice]" />
+                    <inputColumn
+                      refId="Package\Carga Full y Delta Products\División condicional.Inputs[Entrada de división condicional].Columns[UnitsInStock1]"
+                      cachedDataType="i2"
+                      cachedName="UnitsInStock"
+                      lineageId="Package\Carga Full y Delta Products\Búsqueda.Outputs[Salida de entradas coincidentes de búsqueda].Columns[UnitsInStock]" />
+                    <inputColumn
+                      refId="Package\Carga Full y Delta Products\División condicional.Inputs[Entrada de división condicional].Columns[UnitsOnOrder1]"
+                      cachedDataType="i2"
+                      cachedName="UnitsOnOrder"
+                      lineageId="Package\Carga Full y Delta Products\Búsqueda.Outputs[Salida de entradas coincidentes de búsqueda].Columns[UnitsOnOrder]" />
+                    <inputColumn
+                      refId="Package\Carga Full y Delta Products\División condicional.Inputs[Entrada de división condicional].Columns[ReorderLevel1]"
+                      cachedDataType="i2"
+                      cachedName="ReorderLevel"
+                      lineageId="Package\Carga Full y Delta Products\Búsqueda.Outputs[Salida de entradas coincidentes de búsqueda].Columns[ReorderLevel]" />
+                    <inputColumn
+                      refId="Package\Carga Full y Delta Products\División condicional.Inputs[Entrada de división condicional].Columns[Discontinued1]"
+                      cachedDataType="bool"
+                      cachedName="Discontinued"
+                      lineageId="Package\Carga Full y Delta Products\Búsqueda.Outputs[Salida de entradas coincidentes de búsqueda].Columns[Discontinued]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Carga Full y Delta Products\División condicional.Outputs[Agregar]"
+                  description="Salida 1 de la transformación División condicional"
+                  errorOrTruncationOperation="Cálculo"
+                  errorRowDisposition="FailComponent"
+                  exclusionGroup="1"
+                  name="Agregar"
+                  synchronousInputId="Package\Carga Full y Delta Products\División condicional.Inputs[Entrada de división condicional]"
+                  truncationRowDisposition="FailComponent">
+                  <properties>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Especifica la expresión. Esta versión de expresión usa identificadores de linaje en lugar de nombres de columna."
+                      name="Expression">[ISNULL](#{Package\Carga Full y Delta Products\Búsqueda.Outputs[Salida de entradas coincidentes de búsqueda].Columns[ProductID]})</property>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Especifica la versión descriptiva de la expresión. Esta versión de expresión usa nombres de columna."
+                      expressionType="Notify"
+                      name="FriendlyExpression">ISNULL([Búsqueda].ProductID)</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Especifica la posición de la condición en la lista de condiciones que evalúa la transformación. El orden de evaluación es del menor al mayor valor."
+                      name="EvaluationOrder">0</property>
+                  </properties>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Carga Full y Delta Products\División condicional.Outputs[Modificar]"
+                  description="Salida 2 de la transformación División condicional"
+                  errorOrTruncationOperation="Cálculo"
+                  errorRowDisposition="FailComponent"
+                  exclusionGroup="1"
+                  name="Modificar"
+                  synchronousInputId="Package\Carga Full y Delta Products\División condicional.Inputs[Entrada de división condicional]"
+                  truncationRowDisposition="FailComponent">
+                  <properties>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Especifica la expresión. Esta versión de expresión usa identificadores de linaje en lugar de nombres de columna."
+                      name="Expression">(#{Package\Carga Full y Delta Products\Origen de NORTHWND PRODUCTS.Outputs[Salida de origen de OLE DB].Columns[ProductID]} != #{Package\Carga Full y Delta Products\Búsqueda.Outputs[Salida de entradas coincidentes de búsqueda].Columns[ProductID]}) || (#{Package\Carga Full y Delta Products\Origen de NORTHWND PRODUCTS.Outputs[Salida de origen de OLE DB].Columns[ProductName]} != #{Package\Carga Full y Delta Products\Búsqueda.Outputs[Salida de entradas coincidentes de búsqueda].Columns[ProductName]}) || (#{Package\Carga Full y Delta Products\Origen de NORTHWND PRODUCTS.Outputs[Salida de origen de OLE DB].Columns[SupplierID]} != #{Package\Carga Full y Delta Products\Búsqueda.Outputs[Salida de entradas coincidentes de búsqueda].Columns[SupplierID]}) || (#{Package\Carga Full y Delta Products\Origen de NORTHWND PRODUCTS.Outputs[Salida de origen de OLE DB].Columns[CategoryID]} != #{Package\Carga Full y Delta Products\Búsqueda.Outputs[Salida de entradas coincidentes de búsqueda].Columns[CategoryID]}) || (#{Package\Carga Full y Delta Products\Origen de NORTHWND PRODUCTS.Outputs[Salida de origen de OLE DB].Columns[QuantityPerUnit]} != #{Package\Carga Full y Delta Products\Búsqueda.Outputs[Salida de entradas coincidentes de búsqueda].Columns[QuantityPerUnit]}) || (#{Package\Carga Full y Delta Products\Origen de NORTHWND PRODUCTS.Outputs[Salida de origen de OLE DB].Columns[UnitPrice]} != #{Package\Carga Full y Delta Products\Búsqueda.Outputs[Salida de entradas coincidentes de búsqueda].Columns[UnitPrice]}) || (#{Package\Carga Full y Delta Products\Origen de NORTHWND PRODUCTS.Outputs[Salida de origen de OLE DB].Columns[UnitsInStock]} != #{Package\Carga Full y Delta Products\Búsqueda.Outputs[Salida de entradas coincidentes de búsqueda].Columns[UnitsInStock]}) || (#{Package\Carga Full y Delta Products\Origen de NORTHWND PRODUCTS.Outputs[Salida de origen de OLE DB].Columns[UnitsOnOrder]} != #{Package\Carga Full y Delta Products\Búsqueda.Outputs[Salida de entradas coincidentes de búsqueda].Columns[UnitsOnOrder]}) || (#{Package\Carga Full y Delta Products\Origen de NORTHWND PRODUCTS.Outputs[Salida de origen de OLE DB].Columns[UnitsOnOrder]} != #{Package\Carga Full y Delta Products\Búsqueda.Outputs[Salida de entradas coincidentes de búsqueda].Columns[UnitsOnOrder]}) || (#{Package\Carga Full y Delta Products\Origen de NORTHWND PRODUCTS.Outputs[Salida de origen de OLE DB].Columns[ReorderLevel]} != #{Package\Carga Full y Delta Products\Búsqueda.Outputs[Salida de entradas coincidentes de búsqueda].Columns[ReorderLevel]}) || (#{Package\Carga Full y Delta Products\Origen de NORTHWND PRODUCTS.Outputs[Salida de origen de OLE DB].Columns[Discontinued]} != #{Package\Carga Full y Delta Products\Búsqueda.Outputs[Salida de entradas coincidentes de búsqueda].Columns[Discontinued]})</property>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Especifica la versión descriptiva de la expresión. Esta versión de expresión usa nombres de columna."
+                      expressionType="Notify"
+                      name="FriendlyExpression">([Origen de OLE DB].ProductID != [Búsqueda].ProductID) || ([Origen de OLE DB].ProductName != [Búsqueda].ProductName) || ([Origen de OLE DB].SupplierID != [Búsqueda].SupplierID) || ([Origen de OLE DB].CategoryID != [Búsqueda].CategoryID) || ([Origen de OLE DB].QuantityPerUnit != [Búsqueda].QuantityPerUnit) || ([Origen de OLE DB].UnitPrice != [Búsqueda].UnitPrice) || ([Origen de OLE DB].UnitsInStock != [Búsqueda].UnitsInStock) || ([Origen de OLE DB].UnitsOnOrder != [Búsqueda].UnitsOnOrder) || ([Origen de OLE DB].UnitsOnOrder != [Búsqueda].UnitsOnOrder) || ([Origen de OLE DB].ReorderLevel != [Búsqueda].ReorderLevel) || ([Origen de OLE DB].Discontinued != [Búsqueda].Discontinued)</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Especifica la posición de la condición en la lista de condiciones que evalúa la transformación. El orden de evaluación es del menor al mayor valor."
+                      name="EvaluationOrder">1</property>
+                  </properties>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Carga Full y Delta Products\División condicional.Outputs[No cambios]"
+                  description="Salida predeterminada de la transformación División condicional"
+                  exclusionGroup="1"
+                  name="No cambios"
+                  synchronousInputId="Package\Carga Full y Delta Products\División condicional.Inputs[Entrada de división condicional]">
+                  <properties>
+                    <property
+                      dataType="System.Boolean"
+                      name="IsDefaultOut">true</property>
+                  </properties>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Carga Full y Delta Products\División condicional.Outputs[Salida de error de división condicional]"
+                  description="Salida de error de la transformación División condicional"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Salida de error de división condicional"
+                  synchronousInputId="Package\Carga Full y Delta Products\División condicional.Inputs[Entrada de división condicional]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Carga Full y Delta Products\División condicional.Outputs[Salida de error de división condicional].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Carga Full y Delta Products\División condicional.Outputs[Salida de error de división condicional].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Carga Full y Delta Products\División condicional.Outputs[Salida de error de división condicional].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Carga Full y Delta Products\División condicional.Outputs[Salida de error de división condicional].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Carga Full y Delta Products\Modifica Filas o campos"
+              componentClassID="Microsoft.OLEDBCommand"
+              contactInfo="Comando de OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;2"
+              description="Ejecuta una instrucción SQL para cada fila de un flujo de datos. Por ejemplo, se usa para llamar al procedimiento almacenado de configuración de nuevo empleado para cada fila de la tabla de nuevos empleados. Nota: la ejecución de una instrucción SQL para cada fila de un flujo de datos de gran tamaño puede tardar mucho tiempo."
+              name="Modifica Filas o campos"
+              usesDispositions="true"
+              version="2">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Número de segundos antes de que se agote el tiempo de espera de un comando. Un valor de 0 indica un tiempo de espera infinito."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Comando SQL para ejecutar."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">UPDATE [dbo].[StageProducts]
+SET
+    [ProductID] = ?,
+    [ProductName] = ?,
+    [SupplierID] = ?,
+    [CategoryID] = ?,
+    [QuantityPerUnit] = ?,
+    [UnitPrice] = ?,
+    [UnitsInStock] = ?,
+    [UnitsOnOrder] = ?,
+    [ReorderLevel] = ?,
+    [Discontinued] = ?
+WHERE
+    [ProductID] = ?;</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica la página de códigos de columna para utilizar cuando la información de página de códigos no está disponible en el origen de datos."
+                  name="DefaultCodePage">1252</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Carga Full y Delta Products\Modifica Filas o campos.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[.,1450.stageNorthwind.sa]"
+                  connectionManagerRefId="Package.ConnectionManagers[.,1450.stageNorthwind.sa]"
+                  description="La conexión de tiempo de ejecución OLE DB usada para obtener acceso a la base de datos."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Carga Full y Delta Products\Modifica Filas o campos.Inputs[Entrada de comando de OLE DB]"
+                  errorOrTruncationOperation="Ejecución de comando"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="Entrada de comando de OLE DB">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Carga Full y Delta Products\Modifica Filas o campos.Inputs[Entrada de comando de OLE DB].Columns[ProductID]"
+                      cachedDataType="i4"
+                      cachedName="ProductID"
+                      externalMetadataColumnId="Package\Carga Full y Delta Products\Modifica Filas o campos.Inputs[Entrada de comando de OLE DB].ExternalColumns[Param_0]"
+                      lineageId="Package\Carga Full y Delta Products\Origen de NORTHWND PRODUCTS.Outputs[Salida de origen de OLE DB].Columns[ProductID]" />
+                    <inputColumn
+                      refId="Package\Carga Full y Delta Products\Modifica Filas o campos.Inputs[Entrada de comando de OLE DB].Columns[ProductName]"
+                      cachedDataType="wstr"
+                      cachedLength="40"
+                      cachedName="ProductName"
+                      externalMetadataColumnId="Package\Carga Full y Delta Products\Modifica Filas o campos.Inputs[Entrada de comando de OLE DB].ExternalColumns[Param_1]"
+                      lineageId="Package\Carga Full y Delta Products\Origen de NORTHWND PRODUCTS.Outputs[Salida de origen de OLE DB].Columns[ProductName]" />
+                    <inputColumn
+                      refId="Package\Carga Full y Delta Products\Modifica Filas o campos.Inputs[Entrada de comando de OLE DB].Columns[SupplierID]"
+                      cachedDataType="i4"
+                      cachedName="SupplierID"
+                      externalMetadataColumnId="Package\Carga Full y Delta Products\Modifica Filas o campos.Inputs[Entrada de comando de OLE DB].ExternalColumns[Param_2]"
+                      lineageId="Package\Carga Full y Delta Products\Origen de NORTHWND PRODUCTS.Outputs[Salida de origen de OLE DB].Columns[SupplierID]" />
+                    <inputColumn
+                      refId="Package\Carga Full y Delta Products\Modifica Filas o campos.Inputs[Entrada de comando de OLE DB].Columns[CategoryID]"
+                      cachedDataType="i4"
+                      cachedName="CategoryID"
+                      externalMetadataColumnId="Package\Carga Full y Delta Products\Modifica Filas o campos.Inputs[Entrada de comando de OLE DB].ExternalColumns[Param_3]"
+                      lineageId="Package\Carga Full y Delta Products\Origen de NORTHWND PRODUCTS.Outputs[Salida de origen de OLE DB].Columns[CategoryID]" />
+                    <inputColumn
+                      refId="Package\Carga Full y Delta Products\Modifica Filas o campos.Inputs[Entrada de comando de OLE DB].Columns[QuantityPerUnit]"
+                      cachedDataType="wstr"
+                      cachedLength="20"
+                      cachedName="QuantityPerUnit"
+                      externalMetadataColumnId="Package\Carga Full y Delta Products\Modifica Filas o campos.Inputs[Entrada de comando de OLE DB].ExternalColumns[Param_4]"
+                      lineageId="Package\Carga Full y Delta Products\Origen de NORTHWND PRODUCTS.Outputs[Salida de origen de OLE DB].Columns[QuantityPerUnit]" />
+                    <inputColumn
+                      refId="Package\Carga Full y Delta Products\Modifica Filas o campos.Inputs[Entrada de comando de OLE DB].Columns[UnitPrice]"
+                      cachedDataType="cy"
+                      cachedName="UnitPrice"
+                      externalMetadataColumnId="Package\Carga Full y Delta Products\Modifica Filas o campos.Inputs[Entrada de comando de OLE DB].ExternalColumns[Param_5]"
+                      lineageId="Package\Carga Full y Delta Products\Origen de NORTHWND PRODUCTS.Outputs[Salida de origen de OLE DB].Columns[UnitPrice]" />
+                    <inputColumn
+                      refId="Package\Carga Full y Delta Products\Modifica Filas o campos.Inputs[Entrada de comando de OLE DB].Columns[UnitsInStock]"
+                      cachedDataType="i2"
+                      cachedName="UnitsInStock"
+                      externalMetadataColumnId="Package\Carga Full y Delta Products\Modifica Filas o campos.Inputs[Entrada de comando de OLE DB].ExternalColumns[Param_6]"
+                      lineageId="Package\Carga Full y Delta Products\Origen de NORTHWND PRODUCTS.Outputs[Salida de origen de OLE DB].Columns[UnitsInStock]" />
+                    <inputColumn
+                      refId="Package\Carga Full y Delta Products\Modifica Filas o campos.Inputs[Entrada de comando de OLE DB].Columns[UnitsOnOrder]"
+                      cachedDataType="i2"
+                      cachedName="UnitsOnOrder"
+                      externalMetadataColumnId="Package\Carga Full y Delta Products\Modifica Filas o campos.Inputs[Entrada de comando de OLE DB].ExternalColumns[Param_7]"
+                      lineageId="Package\Carga Full y Delta Products\Origen de NORTHWND PRODUCTS.Outputs[Salida de origen de OLE DB].Columns[UnitsOnOrder]" />
+                    <inputColumn
+                      refId="Package\Carga Full y Delta Products\Modifica Filas o campos.Inputs[Entrada de comando de OLE DB].Columns[ReorderLevel]"
+                      cachedDataType="i2"
+                      cachedName="ReorderLevel"
+                      externalMetadataColumnId="Package\Carga Full y Delta Products\Modifica Filas o campos.Inputs[Entrada de comando de OLE DB].ExternalColumns[Param_8]"
+                      lineageId="Package\Carga Full y Delta Products\Origen de NORTHWND PRODUCTS.Outputs[Salida de origen de OLE DB].Columns[ReorderLevel]" />
+                    <inputColumn
+                      refId="Package\Carga Full y Delta Products\Modifica Filas o campos.Inputs[Entrada de comando de OLE DB].Columns[Discontinued]"
+                      cachedDataType="bool"
+                      cachedName="Discontinued"
+                      externalMetadataColumnId="Package\Carga Full y Delta Products\Modifica Filas o campos.Inputs[Entrada de comando de OLE DB].ExternalColumns[Param_9]"
+                      lineageId="Package\Carga Full y Delta Products\Origen de NORTHWND PRODUCTS.Outputs[Salida de origen de OLE DB].Columns[Discontinued]" />
+                    <inputColumn
+                      refId="Package\Carga Full y Delta Products\Modifica Filas o campos.Inputs[Entrada de comando de OLE DB].Columns[ProductID1]"
+                      cachedDataType="i4"
+                      cachedName="ProductID"
+                      externalMetadataColumnId="Package\Carga Full y Delta Products\Modifica Filas o campos.Inputs[Entrada de comando de OLE DB].ExternalColumns[Param_10]"
+                      lineageId="Package\Carga Full y Delta Products\Búsqueda.Outputs[Salida de entradas coincidentes de búsqueda].Columns[ProductID]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Carga Full y Delta Products\Modifica Filas o campos.Inputs[Entrada de comando de OLE DB].ExternalColumns[Param_0]"
+                      dataType="i4"
+                      name="Param_0">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Información de parámetros. Coincide con los valores de DBPARAMFLAGSENUM de OLE DB."
+                          name="DBParamInfoFlags">81</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Carga Full y Delta Products\Modifica Filas o campos.Inputs[Entrada de comando de OLE DB].ExternalColumns[Param_1]"
+                      dataType="wstr"
+                      length="40"
+                      name="Param_1">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Información de parámetros. Coincide con los valores de DBPARAMFLAGSENUM de OLE DB."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Carga Full y Delta Products\Modifica Filas o campos.Inputs[Entrada de comando de OLE DB].ExternalColumns[Param_2]"
+                      dataType="i4"
+                      name="Param_2">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Información de parámetros. Coincide con los valores de DBPARAMFLAGSENUM de OLE DB."
+                          name="DBParamInfoFlags">81</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Carga Full y Delta Products\Modifica Filas o campos.Inputs[Entrada de comando de OLE DB].ExternalColumns[Param_3]"
+                      dataType="i4"
+                      name="Param_3">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Información de parámetros. Coincide con los valores de DBPARAMFLAGSENUM de OLE DB."
+                          name="DBParamInfoFlags">81</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Carga Full y Delta Products\Modifica Filas o campos.Inputs[Entrada de comando de OLE DB].ExternalColumns[Param_4]"
+                      dataType="wstr"
+                      length="20"
+                      name="Param_4">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Información de parámetros. Coincide con los valores de DBPARAMFLAGSENUM de OLE DB."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Carga Full y Delta Products\Modifica Filas o campos.Inputs[Entrada de comando de OLE DB].ExternalColumns[Param_5]"
+                      dataType="cy"
+                      name="Param_5">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Información de parámetros. Coincide con los valores de DBPARAMFLAGSENUM de OLE DB."
+                          name="DBParamInfoFlags">81</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Carga Full y Delta Products\Modifica Filas o campos.Inputs[Entrada de comando de OLE DB].ExternalColumns[Param_6]"
+                      dataType="i2"
+                      name="Param_6">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Información de parámetros. Coincide con los valores de DBPARAMFLAGSENUM de OLE DB."
+                          name="DBParamInfoFlags">81</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Carga Full y Delta Products\Modifica Filas o campos.Inputs[Entrada de comando de OLE DB].ExternalColumns[Param_7]"
+                      dataType="i2"
+                      name="Param_7">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Información de parámetros. Coincide con los valores de DBPARAMFLAGSENUM de OLE DB."
+                          name="DBParamInfoFlags">81</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Carga Full y Delta Products\Modifica Filas o campos.Inputs[Entrada de comando de OLE DB].ExternalColumns[Param_8]"
+                      dataType="i2"
+                      name="Param_8">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Información de parámetros. Coincide con los valores de DBPARAMFLAGSENUM de OLE DB."
+                          name="DBParamInfoFlags">81</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Carga Full y Delta Products\Modifica Filas o campos.Inputs[Entrada de comando de OLE DB].ExternalColumns[Param_9]"
+                      dataType="bool"
+                      name="Param_9">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Información de parámetros. Coincide con los valores de DBPARAMFLAGSENUM de OLE DB."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Carga Full y Delta Products\Modifica Filas o campos.Inputs[Entrada de comando de OLE DB].ExternalColumns[Param_10]"
+                      dataType="i4"
+                      name="Param_10">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Información de parámetros. Coincide con los valores de DBPARAMFLAGSENUM de OLE DB."
+                          name="DBParamInfoFlags">81</property>
+                      </properties>
+                    </externalMetadataColumn>
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Carga Full y Delta Products\Modifica Filas o campos.Outputs[Salida de comando de OLE DB]"
+                  exclusionGroup="1"
+                  name="Salida de comando de OLE DB"
+                  synchronousInputId="Package\Carga Full y Delta Products\Modifica Filas o campos.Inputs[Entrada de comando de OLE DB]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Carga Full y Delta Products\Modifica Filas o campos.Outputs[Salida de error de comando de OLE DB]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Salida de error de comando de OLE DB"
+                  synchronousInputId="Package\Carga Full y Delta Products\Modifica Filas o campos.Inputs[Entrada de comando de OLE DB]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Carga Full y Delta Products\Modifica Filas o campos.Outputs[Salida de error de comando de OLE DB].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Carga Full y Delta Products\Modifica Filas o campos.Outputs[Salida de error de comando de OLE DB].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Carga Full y Delta Products\Modifica Filas o campos.Outputs[Salida de error de comando de OLE DB].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Carga Full y Delta Products\Modifica Filas o campos.Outputs[Salida de error de comando de OLE DB].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Carga Full y Delta Products\Origen de NORTHWND PRODUCTS"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="Origen de OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;7"
+              description="Origen de OLE DB"
+              name="Origen de NORTHWND PRODUCTS"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Número de segundos antes de que se agote el tiempo de espera de un comando. Un valor de 0 indica un tiempo de espera infinito."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica el nombre del objeto de base de datos usado para abrir un conjunto de filas."
+                  name="OpenRowset"></property>
+                <property
+                  dataType="System.String"
+                  description="Especifica la variable que contiene el nombre del objeto de base de datos usado para abrir un conjunto de filas."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="Comando SQL para ejecutar."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT * FROM Products</property>
+                <property
+                  dataType="System.String"
+                  description="Variable que contiene el comando SQL para ejecutar."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica la página de códigos de columna para utilizar cuando la información de página de códigos no está disponible en el origen de datos."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Fuerza el uso del valor de la propiedad DefaultCodePage al describir datos de caracteres."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica el modo utilizado para obtener acceso a la base de datos."
+                  name="AccessMode"
+                  typeConverter="AccessMode">2</property>
+                <property
+                  dataType="System.String"
+                  description="Asignaciones entre los parámetros del comando SQL y las variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Carga Full y Delta Products\Origen de NORTHWND PRODUCTS.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[.,1450.NORTHWND.sa]"
+                  connectionManagerRefId="Package.ConnectionManagers[.,1450.NORTHWND.sa]"
+                  description="La conexión de tiempo de ejecución OLE DB usada para obtener acceso a la base de datos."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Carga Full y Delta Products\Origen de NORTHWND PRODUCTS.Outputs[Salida de origen de OLE DB]"
+                  name="Salida de origen de OLE DB">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Carga Full y Delta Products\Origen de NORTHWND PRODUCTS.Outputs[Salida de origen de OLE DB].Columns[ProductID]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Carga Full y Delta Products\Origen de NORTHWND PRODUCTS.Outputs[Salida de origen de OLE DB].ExternalColumns[ProductID]"
+                      lineageId="Package\Carga Full y Delta Products\Origen de NORTHWND PRODUCTS.Outputs[Salida de origen de OLE DB].Columns[ProductID]"
+                      name="ProductID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Carga Full y Delta Products\Origen de NORTHWND PRODUCTS.Outputs[Salida de origen de OLE DB].Columns[ProductName]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Carga Full y Delta Products\Origen de NORTHWND PRODUCTS.Outputs[Salida de origen de OLE DB].ExternalColumns[ProductName]"
+                      length="40"
+                      lineageId="Package\Carga Full y Delta Products\Origen de NORTHWND PRODUCTS.Outputs[Salida de origen de OLE DB].Columns[ProductName]"
+                      name="ProductName"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Carga Full y Delta Products\Origen de NORTHWND PRODUCTS.Outputs[Salida de origen de OLE DB].Columns[SupplierID]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Carga Full y Delta Products\Origen de NORTHWND PRODUCTS.Outputs[Salida de origen de OLE DB].ExternalColumns[SupplierID]"
+                      lineageId="Package\Carga Full y Delta Products\Origen de NORTHWND PRODUCTS.Outputs[Salida de origen de OLE DB].Columns[SupplierID]"
+                      name="SupplierID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Carga Full y Delta Products\Origen de NORTHWND PRODUCTS.Outputs[Salida de origen de OLE DB].Columns[CategoryID]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Carga Full y Delta Products\Origen de NORTHWND PRODUCTS.Outputs[Salida de origen de OLE DB].ExternalColumns[CategoryID]"
+                      lineageId="Package\Carga Full y Delta Products\Origen de NORTHWND PRODUCTS.Outputs[Salida de origen de OLE DB].Columns[CategoryID]"
+                      name="CategoryID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Carga Full y Delta Products\Origen de NORTHWND PRODUCTS.Outputs[Salida de origen de OLE DB].Columns[QuantityPerUnit]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Carga Full y Delta Products\Origen de NORTHWND PRODUCTS.Outputs[Salida de origen de OLE DB].ExternalColumns[QuantityPerUnit]"
+                      length="20"
+                      lineageId="Package\Carga Full y Delta Products\Origen de NORTHWND PRODUCTS.Outputs[Salida de origen de OLE DB].Columns[QuantityPerUnit]"
+                      name="QuantityPerUnit"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Carga Full y Delta Products\Origen de NORTHWND PRODUCTS.Outputs[Salida de origen de OLE DB].Columns[UnitPrice]"
+                      dataType="cy"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Carga Full y Delta Products\Origen de NORTHWND PRODUCTS.Outputs[Salida de origen de OLE DB].ExternalColumns[UnitPrice]"
+                      lineageId="Package\Carga Full y Delta Products\Origen de NORTHWND PRODUCTS.Outputs[Salida de origen de OLE DB].Columns[UnitPrice]"
+                      name="UnitPrice"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Carga Full y Delta Products\Origen de NORTHWND PRODUCTS.Outputs[Salida de origen de OLE DB].Columns[UnitsInStock]"
+                      dataType="i2"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Carga Full y Delta Products\Origen de NORTHWND PRODUCTS.Outputs[Salida de origen de OLE DB].ExternalColumns[UnitsInStock]"
+                      lineageId="Package\Carga Full y Delta Products\Origen de NORTHWND PRODUCTS.Outputs[Salida de origen de OLE DB].Columns[UnitsInStock]"
+                      name="UnitsInStock"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Carga Full y Delta Products\Origen de NORTHWND PRODUCTS.Outputs[Salida de origen de OLE DB].Columns[UnitsOnOrder]"
+                      dataType="i2"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Carga Full y Delta Products\Origen de NORTHWND PRODUCTS.Outputs[Salida de origen de OLE DB].ExternalColumns[UnitsOnOrder]"
+                      lineageId="Package\Carga Full y Delta Products\Origen de NORTHWND PRODUCTS.Outputs[Salida de origen de OLE DB].Columns[UnitsOnOrder]"
+                      name="UnitsOnOrder"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Carga Full y Delta Products\Origen de NORTHWND PRODUCTS.Outputs[Salida de origen de OLE DB].Columns[ReorderLevel]"
+                      dataType="i2"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Carga Full y Delta Products\Origen de NORTHWND PRODUCTS.Outputs[Salida de origen de OLE DB].ExternalColumns[ReorderLevel]"
+                      lineageId="Package\Carga Full y Delta Products\Origen de NORTHWND PRODUCTS.Outputs[Salida de origen de OLE DB].Columns[ReorderLevel]"
+                      name="ReorderLevel"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Carga Full y Delta Products\Origen de NORTHWND PRODUCTS.Outputs[Salida de origen de OLE DB].Columns[Discontinued]"
+                      dataType="bool"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Carga Full y Delta Products\Origen de NORTHWND PRODUCTS.Outputs[Salida de origen de OLE DB].ExternalColumns[Discontinued]"
+                      lineageId="Package\Carga Full y Delta Products\Origen de NORTHWND PRODUCTS.Outputs[Salida de origen de OLE DB].Columns[Discontinued]"
+                      name="Discontinued"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Carga Full y Delta Products\Origen de NORTHWND PRODUCTS.Outputs[Salida de origen de OLE DB].ExternalColumns[ProductID]"
+                      dataType="i4"
+                      name="ProductID" />
+                    <externalMetadataColumn
+                      refId="Package\Carga Full y Delta Products\Origen de NORTHWND PRODUCTS.Outputs[Salida de origen de OLE DB].ExternalColumns[ProductName]"
+                      dataType="wstr"
+                      length="40"
+                      name="ProductName" />
+                    <externalMetadataColumn
+                      refId="Package\Carga Full y Delta Products\Origen de NORTHWND PRODUCTS.Outputs[Salida de origen de OLE DB].ExternalColumns[SupplierID]"
+                      dataType="i4"
+                      name="SupplierID" />
+                    <externalMetadataColumn
+                      refId="Package\Carga Full y Delta Products\Origen de NORTHWND PRODUCTS.Outputs[Salida de origen de OLE DB].ExternalColumns[CategoryID]"
+                      dataType="i4"
+                      name="CategoryID" />
+                    <externalMetadataColumn
+                      refId="Package\Carga Full y Delta Products\Origen de NORTHWND PRODUCTS.Outputs[Salida de origen de OLE DB].ExternalColumns[QuantityPerUnit]"
+                      dataType="wstr"
+                      length="20"
+                      name="QuantityPerUnit" />
+                    <externalMetadataColumn
+                      refId="Package\Carga Full y Delta Products\Origen de NORTHWND PRODUCTS.Outputs[Salida de origen de OLE DB].ExternalColumns[UnitPrice]"
+                      dataType="cy"
+                      name="UnitPrice" />
+                    <externalMetadataColumn
+                      refId="Package\Carga Full y Delta Products\Origen de NORTHWND PRODUCTS.Outputs[Salida de origen de OLE DB].ExternalColumns[UnitsInStock]"
+                      dataType="i2"
+                      name="UnitsInStock" />
+                    <externalMetadataColumn
+                      refId="Package\Carga Full y Delta Products\Origen de NORTHWND PRODUCTS.Outputs[Salida de origen de OLE DB].ExternalColumns[UnitsOnOrder]"
+                      dataType="i2"
+                      name="UnitsOnOrder" />
+                    <externalMetadataColumn
+                      refId="Package\Carga Full y Delta Products\Origen de NORTHWND PRODUCTS.Outputs[Salida de origen de OLE DB].ExternalColumns[ReorderLevel]"
+                      dataType="i2"
+                      name="ReorderLevel" />
+                    <externalMetadataColumn
+                      refId="Package\Carga Full y Delta Products\Origen de NORTHWND PRODUCTS.Outputs[Salida de origen de OLE DB].ExternalColumns[Discontinued]"
+                      dataType="bool"
+                      name="Discontinued" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Carga Full y Delta Products\Origen de NORTHWND PRODUCTS.Outputs[Salida de error de origen de OLE DB]"
+                  isErrorOut="true"
+                  name="Salida de error de origen de OLE DB">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Carga Full y Delta Products\Origen de NORTHWND PRODUCTS.Outputs[Salida de error de origen de OLE DB].Columns[ProductID]"
+                      dataType="i4"
+                      lineageId="Package\Carga Full y Delta Products\Origen de NORTHWND PRODUCTS.Outputs[Salida de error de origen de OLE DB].Columns[ProductID]"
+                      name="ProductID" />
+                    <outputColumn
+                      refId="Package\Carga Full y Delta Products\Origen de NORTHWND PRODUCTS.Outputs[Salida de error de origen de OLE DB].Columns[ProductName]"
+                      dataType="wstr"
+                      length="40"
+                      lineageId="Package\Carga Full y Delta Products\Origen de NORTHWND PRODUCTS.Outputs[Salida de error de origen de OLE DB].Columns[ProductName]"
+                      name="ProductName" />
+                    <outputColumn
+                      refId="Package\Carga Full y Delta Products\Origen de NORTHWND PRODUCTS.Outputs[Salida de error de origen de OLE DB].Columns[SupplierID]"
+                      dataType="i4"
+                      lineageId="Package\Carga Full y Delta Products\Origen de NORTHWND PRODUCTS.Outputs[Salida de error de origen de OLE DB].Columns[SupplierID]"
+                      name="SupplierID" />
+                    <outputColumn
+                      refId="Package\Carga Full y Delta Products\Origen de NORTHWND PRODUCTS.Outputs[Salida de error de origen de OLE DB].Columns[CategoryID]"
+                      dataType="i4"
+                      lineageId="Package\Carga Full y Delta Products\Origen de NORTHWND PRODUCTS.Outputs[Salida de error de origen de OLE DB].Columns[CategoryID]"
+                      name="CategoryID" />
+                    <outputColumn
+                      refId="Package\Carga Full y Delta Products\Origen de NORTHWND PRODUCTS.Outputs[Salida de error de origen de OLE DB].Columns[QuantityPerUnit]"
+                      dataType="wstr"
+                      length="20"
+                      lineageId="Package\Carga Full y Delta Products\Origen de NORTHWND PRODUCTS.Outputs[Salida de error de origen de OLE DB].Columns[QuantityPerUnit]"
+                      name="QuantityPerUnit" />
+                    <outputColumn
+                      refId="Package\Carga Full y Delta Products\Origen de NORTHWND PRODUCTS.Outputs[Salida de error de origen de OLE DB].Columns[UnitPrice]"
+                      dataType="cy"
+                      lineageId="Package\Carga Full y Delta Products\Origen de NORTHWND PRODUCTS.Outputs[Salida de error de origen de OLE DB].Columns[UnitPrice]"
+                      name="UnitPrice" />
+                    <outputColumn
+                      refId="Package\Carga Full y Delta Products\Origen de NORTHWND PRODUCTS.Outputs[Salida de error de origen de OLE DB].Columns[UnitsInStock]"
+                      dataType="i2"
+                      lineageId="Package\Carga Full y Delta Products\Origen de NORTHWND PRODUCTS.Outputs[Salida de error de origen de OLE DB].Columns[UnitsInStock]"
+                      name="UnitsInStock" />
+                    <outputColumn
+                      refId="Package\Carga Full y Delta Products\Origen de NORTHWND PRODUCTS.Outputs[Salida de error de origen de OLE DB].Columns[UnitsOnOrder]"
+                      dataType="i2"
+                      lineageId="Package\Carga Full y Delta Products\Origen de NORTHWND PRODUCTS.Outputs[Salida de error de origen de OLE DB].Columns[UnitsOnOrder]"
+                      name="UnitsOnOrder" />
+                    <outputColumn
+                      refId="Package\Carga Full y Delta Products\Origen de NORTHWND PRODUCTS.Outputs[Salida de error de origen de OLE DB].Columns[ReorderLevel]"
+                      dataType="i2"
+                      lineageId="Package\Carga Full y Delta Products\Origen de NORTHWND PRODUCTS.Outputs[Salida de error de origen de OLE DB].Columns[ReorderLevel]"
+                      name="ReorderLevel" />
+                    <outputColumn
+                      refId="Package\Carga Full y Delta Products\Origen de NORTHWND PRODUCTS.Outputs[Salida de error de origen de OLE DB].Columns[Discontinued]"
+                      dataType="bool"
+                      lineageId="Package\Carga Full y Delta Products\Origen de NORTHWND PRODUCTS.Outputs[Salida de error de origen de OLE DB].Columns[Discontinued]"
+                      name="Discontinued" />
+                    <outputColumn
+                      refId="Package\Carga Full y Delta Products\Origen de NORTHWND PRODUCTS.Outputs[Salida de error de origen de OLE DB].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Carga Full y Delta Products\Origen de NORTHWND PRODUCTS.Outputs[Salida de error de origen de OLE DB].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Carga Full y Delta Products\Origen de NORTHWND PRODUCTS.Outputs[Salida de error de origen de OLE DB].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Carga Full y Delta Products\Origen de NORTHWND PRODUCTS.Outputs[Salida de error de origen de OLE DB].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Carga Full y Delta Products.Paths[Agregar]"
+              endId="Package\Carga Full y Delta Products\Agrega Filas.Inputs[Entrada de destino de OLE DB]"
+              name="Agregar"
+              startId="Package\Carga Full y Delta Products\División condicional.Outputs[Agregar]" />
+            <path
+              refId="Package\Carga Full y Delta Products.Paths[Modificar]"
+              endId="Package\Carga Full y Delta Products\Modifica Filas o campos.Inputs[Entrada de comando de OLE DB]"
+              name="Modificar"
+              startId="Package\Carga Full y Delta Products\División condicional.Outputs[Modificar]" />
+            <path
+              refId="Package\Carga Full y Delta Products.Paths[Salida de entradas coincidentes de búsqueda]"
+              endId="Package\Carga Full y Delta Products\División condicional.Inputs[Entrada de división condicional]"
+              name="Salida de entradas coincidentes de búsqueda"
+              startId="Package\Carga Full y Delta Products\Búsqueda.Outputs[Salida de entradas coincidentes de búsqueda]" />
+            <path
+              refId="Package\Carga Full y Delta Products.Paths[Salida de origen de OLE DB]"
+              endId="Package\Carga Full y Delta Products\Búsqueda.Inputs[Entrada de búsqueda]"
+              name="Salida de origen de OLE DB"
+              startId="Package\Carga Full y Delta Products\Origen de NORTHWND PRODUCTS.Outputs[Salida de origen de OLE DB]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\LogProdcuts"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Tarea Ejecutar SQL"
+      DTS:DTSID="{BF71EA24-5113-45E1-AD26-3D11CB8B180C}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="LogProdcuts"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{532FF346-34E4-4E03-AB2F-489D5A47F1F2}"
+          SQLTask:BypassPrepare="False"
+          SQLTask:SqlStatementSource="insert into NorthwindLogs.dbo.Northwing_Logs_Stage(&#xA;Table_name,&#xA;Etl_load,&#xA;Num_Rows_Inserted,&#xA;Num_Rows_Modified&#xA;)&#xA;VALUES (&#xA;    'StageProducts', &#xA;    cast (GETDATE() as date), &#xA;    ?, &#xA;    ?&#xA;);&#xA;&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="0"
+            SQLTask:DtsVariableName="User::Agregar"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="3"
+            SQLTask:ParameterSize="-1" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="1"
+            SQLTask:DtsVariableName="User::Modificar"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="3"
+            SQLTask:ParameterSize="-1" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Restricción]"
+      DTS:CreationName=""
+      DTS:DTSID="{3F0C2772-A50D-45CB-9E22-90600BEFBD58}"
+      DTS:From="Package\Carga Full y Delta Products"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Restricción"
+      DTS:To="Package\LogProdcuts" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--Esta sección CDATA contiene la información de diseño del paquete. Esta sección incluye información como, por ejemplo, las coordenadas (x,y), el ancho y el alto.-->
+<!--Si edita manualmente esta sección y comete un error, puede eliminarlo. -->
+<!--El paquete podrá cargarse normalmente, pero se perderá la información de diseño anterior y el diseñador reorganizará los elementos automáticamente en la superficie de diseño.-->
+<Objects
+  Version="8">
+  <!--Cada uno de los nodos siguientes contiene propiedades que no afectan al comportamiento en tiempo de ejecución.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="205.6,41.6"
+          Id="Package\Carga Full y Delta Products"
+          TopLeft="304.166650047734,87.3888882811975" />
+        <NodeLayout
+          Size="136.8,41.6"
+          Id="Package\LogProdcuts"
+          TopLeft="313.333316213556,177.666665431195" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Restricción]"
+          TopLeft="406.966650047734,128.988888281197">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-25.233333834178,48.6777771499975"
+              Start="0,0"
+              End="-25.233333834178,41.1777771499975">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,20.3388885749988" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,20.3388885749988"
+                    Point2="0,24.3388885749988"
+                    Point3="-4,24.3388885749988" />
+                  <mssgle:LineSegment
+                    End="-21.233333834178,24.3388885749988" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-21.233333834178,24.3388885749988"
+                    Point2="-25.233333834178,24.3388885749988"
+                    Point3="-25.233333834178,28.3388885749988" />
+                  <mssgle:LineSegment
+                    End="-25.233333834178,41.1777771499975" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Carga Full y Delta Products">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="189.6,41.6"
+          Id="Package\Carga Full y Delta Products\Modifica Filas o campos"
+          TopLeft="429.285707888859,489.419041622035" />
+        <NodeLayout
+          Size="249.6,41.6"
+          Id="Package\Carga Full y Delta Products\Origen de NORTHWND PRODUCTS"
+          TopLeft="243.333329707384,149.16666444391" />
+        <NodeLayout
+          Size="169.6,41.6"
+          Id="Package\Carga Full y Delta Products\División condicional"
+          TopLeft="238.571425016437,352.857137599162" />
+        <NodeLayout
+          Size="136.8,41.6"
+          Id="Package\Carga Full y Delta Products\Agrega Filas"
+          TopLeft="192.857139983348,471.428564403738" />
+        <NodeLayout
+          Size="125.6,41.6"
+          Id="Package\Carga Full y Delta Products\Búsqueda"
+          TopLeft="271.428567383971,255.714281903846" />
+        <EdgeLayout
+          Id="Package\Carga Full y Delta Products.Paths[Salida de origen de OLE DB]"
+          TopLeft="368.133329707384,190.76666444391">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-33.9047623234129,64.947617459936"
+              Start="0,0"
+              End="-33.9047623234129,57.447617459936">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,28.473808729968" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,28.473808729968"
+                    Point2="0,32.473808729968"
+                    Point3="-4,32.473808729968" />
+                  <mssgle:LineSegment
+                    End="-29.9047623234129,32.473808729968" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-29.9047623234129,32.473808729968"
+                    Point2="-33.9047623234129,32.473808729968"
+                    Point3="-33.9047623234129,36.473808729968" />
+                  <mssgle:LineSegment
+                    End="-33.9047623234129,57.447617459936" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Carga Full y Delta Products.Paths[Salida de entradas coincidentes de búsqueda]"
+          TopLeft="334.228567383971,297.314281903846">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-10.857142367534,55.542855695316"
+              Start="0,0"
+              End="-10.857142367534,48.042855695316">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,23.771427847658" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,23.771427847658"
+                    Point2="0,27.771427847658"
+                    Point3="-4,27.771427847658" />
+                  <mssgle:LineSegment
+                    End="-6.85714236753404,27.771427847658" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-6.85714236753404,27.771427847658"
+                    Point2="-10.857142367534,27.771427847658"
+                    Point3="-10.857142367534,31.771427847658" />
+                  <mssgle:LineSegment
+                    End="-10.857142367534,48.042855695316" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-105.247594621267,32.771427847658,199.638046875,12.1953125"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Carga Full y Delta Products.Paths[Modificar]"
+          TopLeft="350.30475834977,394.457137599162">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="173.780949539089,94.961904022873"
+              Start="0,0"
+              End="173.780949539089,87.461904022873">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,34.5172582672214" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,34.5172582672214"
+                    Point2="0,38.5172582672214"
+                    Point3="4,38.5172582672214" />
+                  <mssgle:LineSegment
+                    End="169.780949539089,38.5172582672214" />
+                  <mssgle:CubicBezierSegment
+                    Point1="169.780949539089,38.5172582672214"
+                    Point2="173.780949539089,38.5172582672214"
+                    Point3="173.780949539089,42.5172582672214" />
+                  <mssgle:LineSegment
+                    End="173.780949539089,87.461904022873" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="66.3367833632944,43.5172582672214,41.1073828125,9.7978515625"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Carga Full y Delta Products.Paths[Agregar]"
+          TopLeft="296.438091683104,394.457137599162">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-35.1809516997557,76.971426804576"
+              Start="0,0"
+              End="-35.1809516997557,69.471426804576">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,27.2201861992392" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,27.2201861992392"
+                    Point2="0,31.2201861992392"
+                    Point3="-4,31.2201861992392" />
+                  <mssgle:LineSegment
+                    End="-31.1809516997557,31.2201861992392" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-31.1809516997557,31.2201861992392"
+                    Point2="-35.1809516997557,31.2201861992392"
+                    Point3="-35.1809516997557,35.2201861992392" />
+                  <mssgle:LineSegment
+                    End="-35.1809516997557,69.471426804576" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-35.9772336623778,36.2201861992392,36.773515625,11.3359375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Carga Full y Delta Products\Origen de NORTHWND PRODUCTS">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Carga Full y Delta Products\Agrega Filas">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Carga Full y Delta Products\Búsqueda">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[StageProducts]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
